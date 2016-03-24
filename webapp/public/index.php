@@ -16,6 +16,4 @@ define('APP_PATH', __DIR__ . '/../application/');
 // 开启调试模式
 define('APP_DEBUG', true);
 // 加载框架引导文件
-require __DIR__ . '/../../vendor/autoload.php';
-
-require __DIR__ . '/../../src/start.php';
+include __DIR__ . '/../config/bootstrap.php';
