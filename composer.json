@@ -12,7 +12,9 @@
         }
     ],
     "require": {
-        "php": "~5.4"
+        "php": "~5.4",
+        "symfony/finder": "~3.0",
+        "slince/console": "*@dev"
     },
     "require-dev": {
         "johnkary/phpunit-speedtrap": "^1.0",
@@ -25,7 +27,8 @@
     "autoload": {
         "psr-4": {
             "Think\\" : "./src",
-            "think\\" : "./src"
+            "think\\" : "./src",
+            "Command\\": "./command"
         },
         "files": [
              "./config/bootstrap.php"
