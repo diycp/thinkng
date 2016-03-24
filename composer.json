@@ -12,9 +12,7 @@
         }
     ],
     "require": {
-        "php": "~5.4",
-        "symfony/finder": "~3.0",
-        "slince/console": "*@dev"
+        "php": "~5.4"
     },
     "require-dev": {
         "johnkary/phpunit-speedtrap": "^1.0",
@@ -22,7 +20,10 @@
         "phploc/phploc": "*",
         "phpunit/phpunit": "4.8.*",
         "sebastian/phpcpd": "*",
-        "squizlabs/php_codesniffer": "2.*"
+        "squizlabs/php_codesniffer": "2.*",
+        
+        "symfony/finder": "~3.0",
+        "slince/console": "*@dev"
     },
     "autoload": {
         "psr-4": {
