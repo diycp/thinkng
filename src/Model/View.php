@@ -13,7 +13,7 @@ namespace Think\Model;
 
 \Think\Loader::import('model/View', TRAIT_PATH, EXT);
 
-class View extends \Think\Model
+class View extends Model
 {
     use \traits\model\View;
 }

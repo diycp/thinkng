@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace Think;
+namespace Think\Template;
 
 /**
  * ThinkPHP分离出来的模板引擎

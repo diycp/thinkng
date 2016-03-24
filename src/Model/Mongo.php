@@ -10,16 +10,16 @@
 // +----------------------------------------------------------------------
 namespace Think\Model;
 
-use Think\Lang;
-use Think\Loader;
+use Think\Intl\Lang;
+use Think\ClassLoader\Loader;
 
-\Think\Loader::import('modle/Adv', TRAIT_PATH, EXT);
+Loader::import('modle/Adv', TRAIT_PATH, EXT);
 
 /**
  * MongoModel模型类
  * 实现了ODM和ActiveRecords模式
  */
-class Mongo extends \Think\Model
+class Mongo extends Model
 {
     use \traits\model\Adv;
 

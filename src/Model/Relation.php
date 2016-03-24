@@ -13,7 +13,7 @@ namespace Think\Model;
 
 \Think\Loader::import('model/Relation', TRAIT_PATH, EXT);
 
-class Relation extends \Think\Model
+class Relation extends Model
 {
     use \traits\model\Relation;
 }

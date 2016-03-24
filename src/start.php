@@ -12,11 +12,14 @@
 namespace Think;
 
 use Think\ClassLoader\Loader;
+use Think\Error\Error;
+use Think\Hook\Hook;
+use Think\App\App;
+use Think\Config\Config;
 
 // ThinkPHP 引导文件
 // 加载基础文件
 require __DIR__ . '/base.php';
-// require CORE_PATH . 'Loader.php';
 
 // 加载环境变量配置文件
 if (is_file(ROOT_PATH . 'env' . EXT)) {

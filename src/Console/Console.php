@@ -7,7 +7,7 @@
 // | Author: zhangyajun <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace Think;
+namespace Think\Console;
 
 use Think\Console\Command\Command;
 use Think\Console\Command\Help as HelpCommand;

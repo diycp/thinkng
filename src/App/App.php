@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace Think;
+namespace Think\App;
 
 use Think\ClassLoader\Loader;
 
