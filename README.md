@@ -1,4 +1,4 @@
-ThinkPHP 5.2.x dev
+ThinkPHP Next Generation @dev
 ===============
 
 - 下一代Thinkphp，完全基于composer自动加载，标准composer库文件结构
