@@ -9,7 +9,7 @@
 // | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://zjzit.cn>
 // +----------------------------------------------------------------------
 
-namespace Think;
+namespace Think\Exception;
 
 /**
  * ThinkPHP核心异常类

@@ -11,6 +11,8 @@
 
 namespace Think\Request;
 
+use Think\Config\Config;
+
 class Response
 {
     // 输出数据的转换方法

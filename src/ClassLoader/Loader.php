@@ -32,14 +32,15 @@ class Loader
     // 自动加载
     public static function autoload($class)
     {
-        //针对旧的兼容
+        //针对旧的兼容；改造1需要兼容，此处废除兼容
+        /*
         if (stripos($class, 'think') !== false) {
             $className = explode('\\', $class)[1];
             $file = THINK_PATH . $className . '/' .  $className . '.php';
             if (file_exists($file)) {
                 include $file;
             }
-        }
+        }*/
         // 检测命名空间别名
         if (!empty(self::$namespaceAlias)) {
             $namespace = dirname($class);
@@ -59,12 +60,16 @@ class Loader
             } else {
                 return false;
             }
-        } elseif ($file = self::findFileInComposer($class)) {
+        }
+        /*
+        //composer优先加载，此处移除对composer的处理
+        elseif ($file = self::findFileInComposer($class)) {
             // Composer自动加载
             // 记录加载信息
             APP_DEBUG && self::$load[] = $file;
             include $file;
-        } else {
+        } */
+        else {
             // 命名空间自动加载
             if (!strpos($class, '\\')) {
                 return false;

@@ -44,7 +44,7 @@ if (isset($mode['namespace'])) {
 }
 
 // 注册自动加载
-// Loader::register();
+Loader::register();
 
 // 加载模式别名定义
 if (isset($mode['alias'])) {
