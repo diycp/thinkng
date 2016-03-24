@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-namespace Think\model;
+namespace Think\Model;
 
 use Think\Lang;
 use Think\Loader;

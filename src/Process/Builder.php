@@ -9,7 +9,7 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace Think\process;
+namespace Think\Process;
 
 use Think\Process;
 

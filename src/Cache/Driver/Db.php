@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace Think\cache\driver;
+namespace Think\Cache\Driver;
 
 use Think\Cache;
 

@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace Think\template;
+namespace Think\Template;
 
 use Think\Exception;
 

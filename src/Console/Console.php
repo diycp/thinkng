@@ -9,19 +9,19 @@
 
 namespace Think;
 
-use Think\console\command\Command;
-use Think\console\command\Help as HelpCommand;
-use Think\console\helper\Debug as DebugFormatterHelper;
-use Think\console\helper\Formatter as FormatterHelper;
-use Think\console\helper\Process as ProcessHelper;
-use Think\console\helper\Question as QuestionHelper;
-use Think\console\helper\Set as HelperSet;
-use Think\console\Input;
-use Think\console\input\Argument as InputArgument;
-use Think\console\input\Definition as InputDefinition;
-use Think\console\input\Option as InputOption;
-use Think\console\Output;
-use Think\console\output\Stream;
+use Think\Console\Command\Command;
+use Think\Console\Command\Help as HelpCommand;
+use Think\Console\Helper\Debug as DebugFormatterHelper;
+use Think\Console\Helper\Formatter as FormatterHelper;
+use Think\Console\Helper\Process as ProcessHelper;
+use Think\Console\Helper\Question as QuestionHelper;
+use Think\Console\Helper\Set as HelperSet;
+use Think\Console\Input;
+use Think\Console\Input\Argument as InputArgument;
+use Think\Console\Input\Definition as InputDefinition;
+use Think\Console\Input\Option as InputOption;
+use Think\Console\Output;
+use Think\Console\Output\Stream;
 
 class Console
 {

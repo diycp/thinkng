@@ -11,7 +11,7 @@
 
 namespace Think;
 
-use Think\exception\ErrorException;
+use Think\Exception\ErrorException;
 
 class Error
 {
@@ -96,7 +96,7 @@ class Error
             // 忽略的异常记录到日志
             Log::record("[{$errno}]{$errstr}[{$errfile}:{$errline}]", 'notice');
         } else {
-            // 将错误信息托管至 Think\exception\ErrorException
+            // 将错误信息托管至 Think\Exception\ErrorException
             throw new ErrorException($errno, $errstr, $errfile, $errline, $errcontext);
             // 禁止往下传播已处理过的异常
             return true;

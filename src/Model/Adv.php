@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace Think\model;
+namespace Think\Model;
 
 \Think\Loader::import('model/Adv', TRAIT_PATH, EXT);
 \Think\Loader::import('model/Transaction', TRAIT_PATH, EXT);

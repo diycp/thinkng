@@ -7,7 +7,7 @@
 // | Author: zhangyajun <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace Think\process;
+namespace Think\Process;
 
 
 class Utils

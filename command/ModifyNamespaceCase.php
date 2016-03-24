@@ -21,13 +21,14 @@ class ModifyNamespaceCase extends Command
         foreach ($files as $file) {
             $io->writeln($file->getRealPath());
             $content = file_get_contents($file->getRealPath());
-            $handledContent = preg_replace_callback('#[Tt]hink\\\\(\w+)(\\\\(\w+))*#', function(& $matches){
-                $replace = 'Think\\' . ucfirst($matches[1]);
-                if (! empty($matches[2])) {
-                    $replace .= '\\' . ucfirst($matches[2]);
-                }
-                var_dump($replace);exit;
+            $handledContent = preg_replace_callback('#[Tt]hink(\\\\(\w+))+#', function(& $matches){
+                $words = explode('\\', $matches[0]);
+                array_walk($words, function(&$word){
+                    $word = ucfirst($word);
+                });
+                return implode('\\', $words);
             }, $content);
+            file_put_contents($file->getRealPath(), $handledContent);
         }
     }
 }

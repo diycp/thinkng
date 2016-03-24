@@ -12,12 +12,12 @@
 namespace Think;
 
 
-use Think\process\exception\Failed as ProcessFailedException;
-use Think\process\exception\Timeout as ProcessTimeoutException;
-use Think\process\pipes\Pipes;
-use Think\process\Utils;
-use Think\process\pipes\Unix as UnixPipes;
-use Think\process\pipes\Windows as WindowsPipes;
+use Think\Process\Exception\Failed as ProcessFailedException;
+use Think\Process\Exception\Timeout as ProcessTimeoutException;
+use Think\Process\Pipes\Pipes;
+use Think\Process\Utils;
+use Think\Process\Pipes\Unix as UnixPipes;
+use Think\Process\Pipes\Windows as WindowsPipes;
 
 class Process
 {

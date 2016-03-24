@@ -9,15 +9,15 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace Think\db;
+namespace Think\Db;
 
 use PDO;
 use Think\Config;
 use Think\Db;
 use Think\Debug;
-use Think\exception\DbBindParamException;
-use Think\exception\DbException;
-use Think\exception\PDOException;
+use Think\Exception\DbBindParamException;
+use Think\Exception\DbException;
+use Think\Exception\PDOException;
 use Think\Log;
 
 abstract class Driver

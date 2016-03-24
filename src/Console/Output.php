@@ -9,10 +9,10 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace Think\console;
+namespace Think\Console;
 
-use Think\console\output\Formatter;
-use Think\console\output\Stream;
+use Think\Console\Output\Formatter;
+use Think\Console\Output\Stream;
 
 class Output extends Stream
 {

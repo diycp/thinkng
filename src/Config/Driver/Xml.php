@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace Think\config\driver;
+namespace Think\Config\Driver;
 
 class Xml
 {
