@@ -1,6 +1,6 @@
 {
-    "name": "thinkphp/thinkphp",
-    "description": "the new thinkphp framework",
+    "name": "thinkphp/webapp",
+    "description": "the thinkphp frameworks skeleton application",
     "type": "project",
     "keywords": ["framework", "thinkphp", "ORM"],
     "homepage": "http://thinkphp.cn/",
@@ -12,7 +12,8 @@
         }
     ],
     "require": {
-        "php": "~5.4"
+        "php": "~5.4",
+        "thinkphp\thinkphp": "5.2.x@dev"
     },
     "require-dev": {
         "johnkary/phpunit-speedtrap": "^1.0",
