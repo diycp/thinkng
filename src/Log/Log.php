@@ -11,6 +11,8 @@
 
 namespace Think\Log;
 
+use Think\Config\Config;
+
 class Log
 {
     const LOG    = 'log';

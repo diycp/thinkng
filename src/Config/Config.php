@@ -11,6 +11,8 @@
 
 namespace Think\Config;
 
+use Think\Log\Log;
+
 class Config
 {
     // 配置参数

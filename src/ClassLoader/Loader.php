@@ -354,7 +354,7 @@ class Loader
         } elseif ($empty && class_exists($emptyClass = self::parseClass($module, $layer, $empty))) {
             return new $emptyClass;
         } else {
-            throw new Exception('class [ ' . $class . ' ] not exists', 10001);
+            throw new \Exception('class [ ' . $class . ' ] not exists', 10001);
         }
     }
 

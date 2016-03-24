@@ -12,6 +12,8 @@
 namespace Think\Error;
 
 use Think\Exception\ErrorException;
+use Think\Log\Log;
+use Think\Config\Config;
 
 class Error
 {
