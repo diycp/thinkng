@@ -9,10 +9,10 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\process\pipes;
+namespace Think\process\pipes;
 
 
-use think\Process;
+use Think\Process;
 
 class Unix extends Pipes
 {

@@ -9,9 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think\db\driver;
+namespace Think\db\driver;
 
-use think\db\Driver;
+use Think\db\Driver;
 
 /**
  * Sqlite数据库驱动

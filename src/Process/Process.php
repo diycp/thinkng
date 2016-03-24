@@ -9,15 +9,15 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think;
 
 
-use think\process\exception\Failed as ProcessFailedException;
-use think\process\exception\Timeout as ProcessTimeoutException;
-use think\process\pipes\Pipes;
-use think\process\Utils;
-use think\process\pipes\Unix as UnixPipes;
-use think\process\pipes\Windows as WindowsPipes;
+use Think\process\exception\Failed as ProcessFailedException;
+use Think\process\exception\Timeout as ProcessTimeoutException;
+use Think\process\pipes\Pipes;
+use Think\process\Utils;
+use Think\process\pipes\Unix as UnixPipes;
+use Think\process\pipes\Windows as WindowsPipes;
 
 class Process
 {

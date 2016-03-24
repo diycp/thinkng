@@ -9,7 +9,7 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console\output\formatter;
+namespace Think\console\output\formatter;
 
 
 class Stack

@@ -9,11 +9,11 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console\command;
+namespace Think\console\command;
 
-use think\console\Input;
-use think\console\input\Option;
-use think\console\Output;
+use Think\console\Input;
+use Think\console\input\Option;
+use Think\console\Output;
 
 class Build extends Command
 {
@@ -40,7 +40,7 @@ class Build extends Command
             $output->writeln("Build Config Is Empty");
             return;
         }
-        \think\Build::run($build);
+        \Think\Build::run($build);
         $output->writeln("Successed");
 
     }

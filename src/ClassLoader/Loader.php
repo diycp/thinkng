@@ -11,7 +11,7 @@
 
 namespace Think\ClassLoader;
 
-use think\Log;
+use Think\Log;
 
 class Loader
 {
@@ -33,7 +33,7 @@ class Loader
     public static function autoload($class)
     {
         //针对旧的兼容
-        if (strpos($class, 'think') !== false) {
+        if (stripos($class, 'think') !== false) {
             $className = explode('\\', $class)[1];
             $file = THINK_PATH . $className . '/' .  $className . '.php';
             if (file_exists($file)) {
@@ -281,7 +281,7 @@ class Loader
         if (strpos($name, ':')) {
             list($class, $name) = explode(':', $name);
         } else {
-            $class = 'think\\Model';
+            $class = 'Think\\Model';
         }
         $guid = $name . '_' . $class;
         if (!isset($_model[$guid])) {

@@ -9,9 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think;
 
-\think\Loader::import('controller/Jump', TRAIT_PATH, EXT);
+\Think\Loader::import('controller/Jump', TRAIT_PATH, EXT);
 
 class Controller
 {
@@ -33,7 +33,7 @@ class Controller
      */
     public function __construct()
     {
-        $this->view = \think\View::instance(Config::get());
+        $this->view = \Think\View::instance(Config::get());
 
         // 控制器初始化
         if (method_exists($this, '_initialize')) {

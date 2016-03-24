@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think;
 
 class Response
 {
@@ -181,7 +181,7 @@ class Response
         $type = IS_AJAX ? Config::get('default_ajax_return') : Config::get('default_return_type');
 
         if ('html' == $type) {
-            $result = \think\View::instance()->fetch(Config::get('dispatch_success_tmpl'), $result);
+            $result = \Think\View::instance()->fetch(Config::get('dispatch_success_tmpl'), $result);
         }
         self::type($type);
         return $result;
@@ -214,7 +214,7 @@ class Response
         $type = IS_AJAX ? Config::get('default_ajax_return') : Config::get('default_return_type');
 
         if ('html' == $type) {
-            $result = \think\View::instance()->fetch(Config::get('dispatch_error_tmpl'), $result);
+            $result = \Think\View::instance()->fetch(Config::get('dispatch_error_tmpl'), $result);
         }
         self::type($type);
         return $result;

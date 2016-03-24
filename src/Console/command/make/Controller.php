@@ -9,9 +9,9 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console\command\make;
+namespace Think\console\command\make;
 
-use think\console\command\Command;
+use Think\console\command\Command;
 
 class Controller extends Command
 {

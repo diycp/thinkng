@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think;
 
 class View
 {
@@ -38,7 +38,7 @@ class View
         // 视图输出字符串替换
         'parse_str'     => [],
         // 视图驱动命名空间
-        'namespace'     => '\\think\\view\\driver\\',
+        'namespace'     => '\\Think\\view\\driver\\',
         // 模板引擎配置参数
         'template'      => [],
     ];

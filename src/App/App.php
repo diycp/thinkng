@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think;
 
 use Think\ClassLoader\Loader;
 
@@ -172,7 +172,7 @@ class App
                 }
             }
             // 全局过滤
-            array_walk_recursive($args, 'think\\Input::filterExp');
+            array_walk_recursive($args, 'Think\\Input::filterExp');
         }
         return $args;
     }

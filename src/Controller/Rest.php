@@ -9,9 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think\controller;
+namespace Think\controller;
 
-use think\Response;
+use Think\Response;
 
 abstract class Rest
 {
@@ -62,7 +62,7 @@ abstract class Rest
      * @param array  $args   参数
      *
      * @return mixed
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function _empty($method, $args)
     {

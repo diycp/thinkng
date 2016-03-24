@@ -9,10 +9,10 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think\cache\driver;
+namespace Think\cache\driver;
 
-use think\Cache;
-use think\Exception;
+use Think\Cache;
+use Think\Exception;
 
 /**
  * Redis缓存驱动

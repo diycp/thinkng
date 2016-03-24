@@ -9,16 +9,16 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think\db;
+namespace Think\db;
 
 use PDO;
-use think\Config;
-use think\Db;
-use think\Debug;
-use think\exception\DbBindParamException;
-use think\exception\DbException;
-use think\exception\PDOException;
-use think\Log;
+use Think\Config;
+use Think\Db;
+use Think\Debug;
+use Think\exception\DbBindParamException;
+use Think\exception\DbException;
+use Think\exception\PDOException;
+use Think\Log;
 
 abstract class Driver
 {
@@ -109,7 +109,7 @@ abstract class Driver
      * 连接数据库方法
      * @access public
      * @return resource
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function connect($config = '', $linkNum = 0, $autoConnection = false)
     {
@@ -163,7 +163,7 @@ abstract class Driver
      * @param boolean $fetch  不执行只是获取SQL
      * @param boolean $master  是否在主服务器读操作
      * @return array|bool|string
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function query($sql, $bind = [], $fetch = false, $master = false)
     {
@@ -208,7 +208,7 @@ abstract class Driver
      * @param array $bind 参数绑定
      * @param boolean $fetch  不执行只是获取SQL
      * @return integer
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function execute($sql, $bind = [], $fetch = false)
     {
@@ -279,7 +279,7 @@ abstract class Driver
      * @access public
      * @param array $bind 要绑定的参数列表
      * @return void
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     protected function bindValue(array $bind = [])
     {
@@ -326,7 +326,7 @@ abstract class Driver
      * 用于非自动提交状态下面的查询提交
      * @access public
      * @return boolean
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function commit()
     {
@@ -345,7 +345,7 @@ abstract class Driver
      * 事务回滚
      * @access public
      * @return boolean
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function rollback()
     {

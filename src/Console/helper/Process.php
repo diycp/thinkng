@@ -9,13 +9,13 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console\helper;
+namespace Think\console\helper;
 
 
-use think\console\Output;
-use think\process\Builder as ProcessBuilder;
-use think\process as ThinkProcess;
-use think\process\exception\Failed as ProcessFailedException;
+use Think\console\Output;
+use Think\process\Builder as ProcessBuilder;
+use Think\process as ThinkProcess;
+use Think\process\exception\Failed as ProcessFailedException;
 
 class Process extends Helper
 {

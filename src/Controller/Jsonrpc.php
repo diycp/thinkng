@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-namespace think\controller;
+namespace Think\controller;
 
 /**
  * ThinkPHP JsonRPC控制器类
@@ -28,7 +28,7 @@ abstract class Jsonrpc
         }
 
         //导入类库
-        \think\Loader::import('vendor.jsonrpc.jsonRPCServer');
+        \Think\Loader::import('vendor.jsonrpc.jsonRPCServer');
         // 启动server
         \jsonRPCServer::handle($this);
     }

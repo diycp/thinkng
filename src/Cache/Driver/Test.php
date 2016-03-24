@@ -9,9 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think\cache\driver;
+namespace Think\cache\driver;
 
-use think\Cache;
+use Think\Cache;
 
 /**
  * 测试缓存类

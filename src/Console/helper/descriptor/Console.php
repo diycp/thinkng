@@ -9,11 +9,11 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console\helper\descriptor;
+namespace Think\console\helper\descriptor;
 
 
-use think\console\command\Command;
-use think\Console as ThinkConsole;
+use Think\console\command\Command;
+use Think\Console as ThinkConsole;
 
 class Console
 {

@@ -9,15 +9,15 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console\command;
+namespace Think\console\command;
 
 
-use think\console\Input;
-use think\console\Output;
-use think\console\input\Argument as InputArgument;
-use think\console\input\Option as InputOption;
-use think\console\input\Definition as InputDefinition;
-use think\console\helper\Descriptor as DescriptorHelper;
+use Think\console\Input;
+use Think\console\Output;
+use Think\console\input\Argument as InputArgument;
+use Think\console\input\Option as InputOption;
+use Think\console\input\Definition as InputDefinition;
+use Think\console\helper\Descriptor as DescriptorHelper;
 
 class Lists extends Command
 {

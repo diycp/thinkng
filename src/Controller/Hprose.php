@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-namespace think\controller;
+namespace Think\controller;
 
 /**
  * ThinkPHP Hprose控制器类
@@ -34,7 +34,7 @@ abstract class Hprose
         }
 
         //导入类库
-        \think\Loader::import('vendor.Hprose.HproseHttpServer');
+        \Think\Loader::import('vendor.Hprose.HproseHttpServer');
         //实例化HproseHttpServer
         $server = new \HproseHttpServer();
         if ($this->allowMethodList) {

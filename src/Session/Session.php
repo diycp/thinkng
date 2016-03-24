@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-namespace think;
+namespace Think;
 
 class Session
 {
@@ -34,7 +34,7 @@ class Session
      * session初始化
      * @param array $config
      * @return void
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public static function init(array $config = [])
     {
@@ -87,11 +87,11 @@ class Session
         }
         if (!empty($config['type'])) {
             // 读取session驱动
-            $class = (!empty($config['namespace']) ? $config['namespace'] : '\\think\\session\\driver\\') . ucwords($config['type']);
+            $class = (!empty($config['namespace']) ? $config['namespace'] : '\\Think\\session\\driver\\') . ucwords($config['type']);
 
             // 检查驱动类
             if (!class_exists($class) || !session_set_save_handler(new $class($config))) {
-                throw new \think\Exception('error session handler', 11700);
+                throw new \Think\Exception('error session handler', 11700);
             }
         }
         if ($isDoStart) {

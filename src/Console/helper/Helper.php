@@ -9,10 +9,10 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console\helper;
+namespace Think\console\helper;
 
-use think\console\helper\Set as HelperSet;
-use think\console\output\Formatter;
+use Think\console\helper\Set as HelperSet;
+use Think\console\output\Formatter;
 
 abstract class Helper
 {

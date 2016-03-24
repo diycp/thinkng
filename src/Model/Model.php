@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think;
 
 class Model
 {
@@ -158,7 +158,7 @@ class Model
      * @param string $method 方法名称
      * @param array $args 调用参数
      * @return mixed
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function __call($method, $args)
     {
@@ -194,7 +194,7 @@ class Model
      * @param mixed $data 要操作的数据
      * @param string $type insert 或者 update
      * @return array
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     protected function _write_data($data, $type)
     {
@@ -291,7 +291,7 @@ class Model
      * @param mixed $data 数据
      * @param boolean $replace 是否replace
      * @return mixed
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function add($data = '', $replace = false)
     {
@@ -358,7 +358,7 @@ class Model
      * @access public
      * @param mixed $data 数据
      * @return boolean
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function save($data = '')
     {
@@ -421,7 +421,7 @@ class Model
      * @access public
      * @param mixed $options 表达式
      * @return mixed
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function delete($options = [])
     {
@@ -468,7 +468,7 @@ class Model
      * @access public
      * @param mixed $options 表达式参数
      * @return mixed
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function select($options = [])
     {
@@ -532,7 +532,7 @@ class Model
      * @access public
      * @param mixed $options 表达式参数
      * @return void
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     protected function parsePkWhere(&$options)
     {
@@ -685,7 +685,7 @@ class Model
      * @param integer $step  增长值
      * @param integer $lazyTime  延时时间(s)
      * @return boolean
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function setInc($field, $step = 1, $lazyTime = 0)
     {
@@ -712,7 +712,7 @@ class Model
      * @param integer $step  减少值
      * @param integer $lazyTime  延时时间(s)
      * @return boolean
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function setDec($field, $step = 1, $lazyTime = 0)
     {
@@ -853,7 +853,7 @@ class Model
      * @access public
      * @param mixed $options 表达式参数
      * @return mixed
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function find($options = [])
     {
@@ -929,13 +929,13 @@ class Model
      * @access public
      * @param mixed $data 创建数据
      * @return mixed
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function create($data = '')
     {
         // 如果没有传值默认取POST数据
         if (empty($data)) {
-            $data = \think\Input::post();
+            $data = \Think\Input::post();
         } elseif (is_object($data)) {
             $data = get_object_vars($data);
         }
@@ -1406,7 +1406,7 @@ class Model
      * @access public
      * @param mixed $data 数据
      * @return Model
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function data($data = '')
     {
@@ -1517,7 +1517,7 @@ class Model
      * @param mixed $union
      * @param boolean $all
      * @return Model
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function union($union, $all = false)
     {

@@ -23,7 +23,7 @@ return [
     ],
     // 别名定义
     'alias'     => [
-        'think\Error' => MODE_PATH . 'console/Error' . EXT,
+        'Think\Error' => MODE_PATH . 'console/Error' . EXT,
     ],
     // 配置文件
     'config'    => [

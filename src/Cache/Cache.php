@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think;
 
 /**
  * Class Cache
@@ -44,7 +44,7 @@ class Cache
         $md5 = md5(serialize($options));
         if (!isset(self::$instance[$md5])) {
             $type  = !empty($options['type']) ? $options['type'] : 'File';
-            $class = (!empty($options['namespace']) ? $options['namespace'] : '\\think\\cache\\driver\\') . ucwords($type);
+            $class = (!empty($options['namespace']) ? $options['namespace'] : '\\Think\\cache\\driver\\') . ucwords($type);
             unset($options['type']);
             self::$instance[$md5] = new $class($options);
             // 记录初始化信息

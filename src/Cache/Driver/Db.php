@@ -9,9 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think\cache\driver;
+namespace Think\cache\driver;
 
-use think\Cache;
+use Think\Cache;
 
 /**
  * 数据库方式缓存驱动
@@ -53,7 +53,7 @@ class Db
         if (!empty($options)) {
             $this->options = array_merge($this->options, $options);
         }
-        $this->handler = \think\Db::connect((!empty($this->options['hostname']) || !empty($this->options['dsn'])) ? $this->options : []);
+        $this->handler = \Think\Db::connect((!empty($this->options['hostname']) || !empty($this->options['dsn'])) ? $this->options : []);
     }
 
     /**

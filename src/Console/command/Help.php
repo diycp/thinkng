@@ -9,13 +9,13 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console\command;
+namespace Think\console\command;
 
-use think\console\Input;
-use think\console\input\Argument as InputArgument;
-use think\console\input\Option as InputOption;
-use think\console\Output;
-use think\console\helper\Descriptor as DescriptorHelper;
+use Think\console\Input;
+use Think\console\input\Argument as InputArgument;
+use Think\console\input\Option as InputOption;
+use Think\console\Output;
+use Think\console\helper\Descriptor as DescriptorHelper;
 
 class Help extends Command
 {

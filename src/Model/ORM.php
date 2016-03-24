@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think;
 
 class ORM
 {
@@ -71,7 +71,7 @@ class ORM
         $name = basename(str_replace('\\', '/', get_called_class()));
         if (!isset(self::$instance[$name])) {
             // 自动实例化模型类
-            self::$instance[$name] = new \think\Model($name, static::$config);
+            self::$instance[$name] = new \Think\Model($name, static::$config);
         }
         return call_user_func_array([self::$instance[$name], $method], $params);
     }

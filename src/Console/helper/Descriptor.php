@@ -7,10 +7,10 @@
 // | Author: zhangyajun <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console\helper;
+namespace Think\console\helper;
 
-use think\console\helper\descriptor\Descriptor as OutputDescriptor;
-use think\console\Output;
+use Think\console\helper\descriptor\Descriptor as OutputDescriptor;
+use Think\console\Output;
 
 class Descriptor extends Helper
 {

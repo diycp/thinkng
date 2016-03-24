@@ -9,11 +9,11 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console;
+namespace Think\console;
 
-use think\console\input\Definition;
-use think\console\input\Argument;
-use think\console\input\Option;
+use Think\console\input\Definition;
+use Think\console\input\Argument;
+use Think\console\input\Option;
 
 class Input
 {

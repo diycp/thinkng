@@ -9,10 +9,10 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think\db\driver;
+namespace Think\db\driver;
 
 use PDO;
-use think\db\Driver;
+use Think\db\Driver;
 
 /**
  * Sqlsrv数据库驱动

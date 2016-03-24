@@ -9,10 +9,10 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console\helper;
+namespace Think\console\helper;
 
 
-use think\console\command\Command;
+use Think\console\command\Command;
 
 class Set implements \IteratorAggregate
 {

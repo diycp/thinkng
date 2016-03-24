@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-namespace think\controller;
+namespace Think\controller;
 
 /**
  * ThinkPHP Yar控制器类

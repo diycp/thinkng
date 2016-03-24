@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think;
 
 /**
  * ThinkPHP分离出来的模板引擎
@@ -47,7 +47,7 @@ class Template
         'cache_id'           => '', // 模板缓存ID
         'tpl_replace_string' => [],
         'tpl_var_identify'   => 'array', // .语法变量识别，array|object|'', 为空时自动识别
-        'namespace'          => '\\think\\template\\driver\\',
+        'namespace'          => '\\Think\\template\\driver\\',
     ];
 
     private $literal     = [];
@@ -409,7 +409,7 @@ class Template
      * @access private
      * @param string $content 要解析的模板内容
      * @return void
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     private function parsePhp(&$content)
     {
@@ -666,7 +666,7 @@ class Template
             $className = $tagLib;
             $tagLib    = substr($tagLib, strrpos($tagLib, '\\') + 1);
         } else {
-            $className = '\\think\\template\\taglib\\' . ucwords($tagLib);
+            $className = '\\Think\\template\\taglib\\' . ucwords($tagLib);
         }
         $tLib = new $className($this);
         $tLib->parseTag($content, $hide ? '' : $tagLib);
@@ -947,14 +947,14 @@ class Template
                     if (isset($vars[2])) {
                         $parseStr = '$_COOKIE[\'' . $vars[1] . '\'][\'' . $vars[2] . '\']';
                     } else {
-                        $parseStr = '\\think\\Cookie::get(\'' . $vars[1] . '\')';
+                        $parseStr = '\\Think\\Cookie::get(\'' . $vars[1] . '\')';
                     }
                     break;
                 case 'SESSION':
                     if (isset($vars[2])) {
                         $parseStr = '$_SESSION[\'' . $vars[1] . '\'][\'' . $vars[2] . '\']';
                     } else {
-                        $parseStr = '\\think\\Session::get(\'' . $vars[1] . '\')';
+                        $parseStr = '\\Think\\Session::get(\'' . $vars[1] . '\')';
                     }
                     break;
                 case 'ENV':
@@ -967,13 +967,13 @@ class Template
                     $parseStr = strtoupper($vars[1]);
                     break;
                 case 'LANG':
-                    $parseStr = '\\think\\Lang::get(\'' . $vars[1] . '\')';
+                    $parseStr = '\\Think\\Lang::get(\'' . $vars[1] . '\')';
                     break;
                 case 'CONFIG':
                     if (isset($vars[2])) {
                         $vars[1] .= '.' . $vars[2];
                     }
-                    $parseStr = '\\think\\Config::get(\'' . $vars[1] . '\')';
+                    $parseStr = '\\Think\\Config::get(\'' . $vars[1] . '\')';
                     break;
                 default:
                     $parseStr = '\'\'';

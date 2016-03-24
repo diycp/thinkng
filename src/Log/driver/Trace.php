@@ -8,10 +8,10 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-namespace think\log\driver;
+namespace Think\log\driver;
 
-use think\Config;
-use think\Debug;
+use Think\Config;
+use Think\Debug;
 
 /**
  * 页面Trace调试
@@ -52,8 +52,8 @@ class Trace
         $base = [
             '请求信息' => date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']) . ' ' . $_SERVER['SERVER_PROTOCOL'] . ' ' . $_SERVER['REQUEST_METHOD'] . ' : ' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'],
             '运行时间' => "{$runtime}s [ 吞吐率：{$reqs}req/s ] 内存消耗：{$mem}kb 文件加载：" . count(get_included_files()),
-            '查询信息' => \think\Db::$queryTimes . ' queries ' . \think\Db::$executeTimes . ' writes ',
-            '缓存信息' => \think\Cache::$readTimes . ' reads,' . \think\Cache::$writeTimes . ' writes',
+            '查询信息' => \Think\Db::$queryTimes . ' queries ' . \Think\Db::$executeTimes . ' writes ',
+            '缓存信息' => \Think\Cache::$readTimes . ' reads,' . \Think\Cache::$writeTimes . ' writes',
             '配置加载' => count(Config::get()),
         ];
 

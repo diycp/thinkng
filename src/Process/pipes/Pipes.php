@@ -9,7 +9,7 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\process\pipes;
+namespace Think\process\pipes;
 
 abstract class Pipes
 {

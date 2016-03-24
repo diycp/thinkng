@@ -9,10 +9,10 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think\db\driver;
+namespace Think\db\driver;
 
-use think\db\Driver;
-use think\Log;
+use Think\db\Driver;
+use Think\Log;
 
 /**
  * mysql数据库驱动

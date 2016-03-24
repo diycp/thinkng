@@ -9,10 +9,10 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think\session\driver;
+namespace Think\session\driver;
 
 use SessionHandler;
-use think\Exception;
+use Think\Exception;
 
 class Memcache extends SessionHandler
 {

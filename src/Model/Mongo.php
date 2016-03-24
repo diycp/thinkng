@@ -8,18 +8,18 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-namespace think\model;
+namespace Think\model;
 
-use think\Lang;
-use think\Loader;
+use Think\Lang;
+use Think\Loader;
 
-\think\Loader::import('modle/Adv', TRAIT_PATH, EXT);
+\Think\Loader::import('modle/Adv', TRAIT_PATH, EXT);
 
 /**
  * MongoModel模型类
  * 实现了ODM和ActiveRecords模式
  */
-class Mongo extends \think\Model
+class Mongo extends \Think\Model
 {
     use \traits\model\Adv;
 
@@ -45,7 +45,7 @@ class Mongo extends \think\Model
      * @param array  $args   调用参数
      *
      * @return mixed
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function __call($method, $args)
     {
@@ -60,7 +60,7 @@ class Mongo extends \think\Model
             $where[$name] = $args[0];
             return $this->where($where)->getField($args[1]);
         } else {
-            throw new \think\Exception(__CLASS__ . ':' . $method . Lang::get('_METHOD_NOT_EXIST_'));
+            throw new \Think\Exception(__CLASS__ . ':' . $method . Lang::get('_METHOD_NOT_EXIST_'));
         }
     }
 

@@ -9,14 +9,14 @@
 // | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://zjzit.cn>
 // +----------------------------------------------------------------------
 
-namespace think\exception;
+namespace Think\exception;
 
-use think\Exception;
+use Think\Exception;
 
 /**
  * ThinkPHP错误异常
  * 主要用于封装 set_error_handler 和 register_shutdown_function 得到的错误
- * 除开从 think\Exception 继承的功能
+ * 除开从 Think\Exception 继承的功能
  * 其他和PHP系统\ErrorException功能基本一样
  */
 class ErrorException extends Exception

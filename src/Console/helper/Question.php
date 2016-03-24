@@ -9,14 +9,14 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console\helper;
+namespace Think\console\helper;
 
 
-use think\console\Input;
-use think\console\Output;
-use think\console\helper\question\Question as OutputQuestion;
-use think\console\helper\question\Choice as ChoiceQuestion;
-use think\console\output\formatter\Style as OutputFormatterStyle;
+use Think\console\Input;
+use Think\console\Output;
+use Think\console\helper\question\Question as OutputQuestion;
+use Think\console\helper\question\Choice as ChoiceQuestion;
+use Think\console\output\formatter\Style as OutputFormatterStyle;
 
 class Question extends Helper
 {

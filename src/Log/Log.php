@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think;
 
 class Log
 {
@@ -33,7 +33,7 @@ class Log
     public static function init($config = [])
     {
         $type  = isset($config['type']) ? $config['type'] : 'File';
-        $class = (!empty($config['namespace']) ? $config['namespace'] : '\\think\\log\\driver\\') . ucwords($type);
+        $class = (!empty($config['namespace']) ? $config['namespace'] : '\\Think\\log\\driver\\') . ucwords($type);
         unset($config['type']);
         self::$driver = new $class($config);
         // 记录初始化信息
@@ -44,7 +44,7 @@ class Log
     public static function alarm($config = [])
     {
         $type  = isset($config['type']) ? $config['type'] : 'Email';
-        $class = (!empty($config['namespace']) ? $config['namespace'] : '\\think\\log\\alarm\\') . ucwords($type);
+        $class = (!empty($config['namespace']) ? $config['namespace'] : '\\Think\\log\\alarm\\') . ucwords($type);
         unset($config['type']);
         self::$alarm = new $class($config['alarm']);
         // 记录初始化信息
@@ -133,7 +133,7 @@ class Log
     {
         if (in_array($method, self::$type)) {
             array_push($args, $method);
-            return call_user_func_array('\\think\\Log::record', $args);
+            return call_user_func_array('\\Think\\Log::record', $args);
         }
     }
 

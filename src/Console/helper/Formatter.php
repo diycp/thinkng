@@ -9,9 +9,9 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console\helper;
+namespace Think\console\helper;
 
-use think\console\output\Formatter as OutputFormatter;
+use Think\console\output\Formatter as OutputFormatter;
 
 class Formatter extends Helper
 {

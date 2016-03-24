@@ -9,9 +9,9 @@
 // | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://zjzit.cn>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think;
 
-use think\exception\ErrorException;
+use Think\exception\ErrorException;
 
 class Error
 {
@@ -96,7 +96,7 @@ class Error
             // 忽略的异常记录到日志
             Log::record("[{$errno}]{$errstr}[{$errfile}:{$errline}]", 'notice');
         } else {
-            // 将错误信息托管至 think\exception\ErrorException
+            // 将错误信息托管至 Think\exception\ErrorException
             throw new ErrorException($errno, $errstr, $errfile, $errline, $errcontext);
             // 禁止往下传播已处理过的异常
             return true;
@@ -113,7 +113,7 @@ class Error
         Log::save();
 
         if ($error = error_get_last()) {
-            // 将错误信息托管至think\ErrorException
+            // 将错误信息托管至Think\ErrorException
             $exception = new ErrorException(
                 $error['type'],
                 $error['message'],

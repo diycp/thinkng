@@ -9,9 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think\template\taglib;
+namespace Think\template\taglib;
 
-use think\template\TagLib;
+use Think\template\TagLib;
 
 /**
  * CX标签库解析类
@@ -541,7 +541,7 @@ class Cx extends Taglib
                         $parseStr .= '<link rel="stylesheet" type="text/css" href="' . $basepath . '/' . str_replace(['.', '#'], ['/', '.'], $val) . '.css' . ($version ? '?' . $version : '') . '" />';
                         break;
                     case 'php':
-                        $parseStr .= '<?php \think\Loader::import("' . $val . '"); ?>';
+                        $parseStr .= '<?php \Think\Loader::import("' . $val . '"); ?>';
                         break;
                 }
             }

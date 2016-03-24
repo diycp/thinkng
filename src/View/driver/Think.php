@@ -8,9 +8,9 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-namespace think\view\driver;
+namespace Think\view\driver;
 
-use think\Template;
+use Think\Template;
 
 class Think
 {

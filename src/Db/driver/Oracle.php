@@ -9,11 +9,11 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think\db\driver;
+namespace Think\db\driver;
 
-use think\Config;
-use think\Db;
-use think\db\Driver;
+use Think\Config;
+use Think\Db;
+use Think\db\Driver;
 
 /**
  * Oracle数据库驱动
@@ -52,7 +52,7 @@ class Oracle extends Driver
      * @param boolean $fetch  不执行只是获取SQL
      * @return integer
      * @throws \Exception
-     * @throws \think\Exception
+     * @throws \Think\Exception
      */
     public function execute($sql, $bind = [], $fetch = false)
     {
@@ -91,7 +91,7 @@ class Oracle extends Driver
             }
             return $this->numRows;
         } catch (\PDOException $e) {
-            throw new \think\Exception($this->getError());
+            throw new \Think\Exception($this->getError());
         }
     }
 

@@ -9,9 +9,9 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\process;
+namespace Think\process;
 
-use think\Process;
+use Think\Process;
 
 class Builder
 {

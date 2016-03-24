@@ -9,9 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think\template;
+namespace Think\template;
 
-use think\Exception;
+use Think\Exception;
 
 /**
  * ThinkPHP标签库TagLib解析基类

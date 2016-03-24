@@ -8,10 +8,10 @@
 // +----------------------------------------------------------------------
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
-namespace think\console\output;
+namespace Think\console\output;
 
-use think\console\output\formatter\Style;
-use think\console\output\formatter\Stack as StyleStack;
+use Think\console\output\formatter\Style;
+use Think\console\output\formatter\Stack as StyleStack;
 
 class Formatter
 {

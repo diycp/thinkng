@@ -9,9 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think\template\driver;
+namespace Think\template\driver;
 
-use think\Exception;
+use Think\Exception;
 
 class Sae
 {

@@ -9,9 +9,9 @@
 // | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://zjzit.cn>
 // +----------------------------------------------------------------------
 
-namespace think\exception;
+namespace Think\exception;
 
-use think\exception\DbException;
+use Think\exception\DbException;
 
 /**
  * PDO异常处理类

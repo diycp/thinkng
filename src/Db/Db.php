@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think;
 
 /**
  * ThinkPHP 数据库中间层实现类
@@ -41,7 +41,7 @@ class Db
             if (empty($options['type'])) {
                 throw new Exception('db type error');
             }
-            $class                 = (!empty($options['namespace']) ? $options['namespace'] : '\\think\\db\\driver\\') . ucwords($options['type']);
+            $class                 = (!empty($options['namespace']) ? $options['namespace'] : '\\Think\\db\\driver\\') . ucwords($options['type']);
             self::$instances[$md5] = new $class($options);
             // 记录初始化信息
             APP_DEBUG && Log::record('[ DB ] INIT ' . $options['type'] . ':' . var_export($options, true), 'info');

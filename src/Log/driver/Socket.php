@@ -3,7 +3,7 @@
  * github: https://github.com/luofei614/SocketLog
  * @author luofei614<weibo.com/luofei614>
  */
-namespace think\log\driver;
+namespace Think\log\driver;
 
 class Socket
 {

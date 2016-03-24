@@ -9,15 +9,15 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console\command;
+namespace Think\console\command;
 
-use think\Console;
-use think\console\Input;
-use think\console\input\Argument;
-use think\console\input\Definition;
-use think\console\helper\Set as HelperSet;
-use think\console\input\Option;
-use think\console\Output;
+use Think\Console;
+use Think\console\Input;
+use Think\console\input\Argument;
+use Think\console\input\Definition;
+use Think\console\helper\Set as HelperSet;
+use Think\console\input\Option;
+use Think\console\Output;
 
 class Command
 {

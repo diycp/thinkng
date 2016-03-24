@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-namespace think;
+namespace Think;
 
 class Build
 {
@@ -105,7 +105,7 @@ class Build
                             $content = "<?php\nnamespace {$namespace};\n\nclass {$class}\n{\n\n}";
                             break;
                         case MODEL_LAYER:    // 模型
-                            $content = "<?php\nnamespace {$namespace};\n\nuse think\Model;\n\nclass {$class} extends Model\n{\n\n}";
+                            $content = "<?php\nnamespace {$namespace};\n\nuse Think\Model;\n\nclass {$class} extends Model\n{\n\n}";
                             break;
                         case VIEW_LAYER:    // 视图
                             $filename = $modulePath . $path . DS . $val . '.html';

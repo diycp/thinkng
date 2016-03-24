@@ -9,10 +9,10 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console\output;
+namespace Think\console\output;
 
 
-use think\console\Output;
+use Think\console\Output;
 
 class Null extends Output
 {

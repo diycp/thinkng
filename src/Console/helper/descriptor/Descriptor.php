@@ -9,15 +9,15 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\console\helper\descriptor;
+namespace Think\console\helper\descriptor;
 
-use think\console\Output;
-use think\console\input\Argument as InputArgument;
-use think\console\input\Option as InputOption;
-use think\console\input\Definition as InputDefinition;
-use think\console\command\Command;
-use think\Console;
-use think\console\helper\descriptor\Console as ConsoleDescription;
+use Think\console\Output;
+use Think\console\input\Argument as InputArgument;
+use Think\console\input\Option as InputOption;
+use Think\console\input\Definition as InputDefinition;
+use Think\console\command\Command;
+use Think\Console;
+use Think\console\helper\descriptor\Console as ConsoleDescription;
 
 class Descriptor
 {

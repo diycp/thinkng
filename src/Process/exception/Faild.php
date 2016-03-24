@@ -9,10 +9,10 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think\process\exception;
+namespace Think\process\exception;
 
 
-use think\Process;
+use Think\Process;
 
 class Failed extends \RuntimeException
 {

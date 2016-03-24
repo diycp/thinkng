@@ -7,21 +7,21 @@
 // | Author: zhangyajun <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think;
 
-use think\console\command\Command;
-use think\console\command\Help as HelpCommand;
-use think\console\helper\Debug as DebugFormatterHelper;
-use think\console\helper\Formatter as FormatterHelper;
-use think\console\helper\Process as ProcessHelper;
-use think\console\helper\Question as QuestionHelper;
-use think\console\helper\Set as HelperSet;
-use think\console\Input;
-use think\console\input\Argument as InputArgument;
-use think\console\input\Definition as InputDefinition;
-use think\console\input\Option as InputOption;
-use think\console\Output;
-use think\console\output\Stream;
+use Think\console\command\Command;
+use Think\console\command\Help as HelpCommand;
+use Think\console\helper\Debug as DebugFormatterHelper;
+use Think\console\helper\Formatter as FormatterHelper;
+use Think\console\helper\Process as ProcessHelper;
+use Think\console\helper\Question as QuestionHelper;
+use Think\console\helper\Set as HelperSet;
+use Think\console\Input;
+use Think\console\input\Argument as InputArgument;
+use Think\console\input\Definition as InputDefinition;
+use Think\console\input\Option as InputOption;
+use Think\console\Output;
+use Think\console\output\Stream;
 
 class Console
 {
@@ -45,11 +45,11 @@ class Console
     private $defaultCommand;
 
     private static $defaultCommands = [
-        "think\\console\\command\\Help",
-        "think\\console\\command\\Lists",
-        "think\\console\\command\\Build",
-        "think\\console\\command\\make\\Controller",
-        "think\\console\\command\\make\\Model"
+        "Think\\console\\command\\Help",
+        "Think\\console\\command\\Lists",
+        "Think\\console\\command\\Build",
+        "Think\\console\\command\\make\\Controller",
+        "Think\\console\\command\\make\\Model"
     ];
 
     public function __construct($name = 'UNKNOWN', $version = 'UNKNOWN')
@@ -730,7 +730,7 @@ class Console
         $defaultCommands = [];
 
         foreach (self::$defaultCommands as $classname) {
-            if (class_exists($classname) && is_subclass_of($classname, "think\\console\\command\\Command")) {
+            if (class_exists($classname) && is_subclass_of($classname, "Think\\console\\command\\Command")) {
                 $defaultCommands[] = new $classname();
             }
         }

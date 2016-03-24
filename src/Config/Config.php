@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think;
 
 class Config
 {
@@ -39,7 +39,7 @@ class Config
         if (empty($type)) {
             $type = pathinfo($config, PATHINFO_EXTENSION);
         }
-        $class = (false === strpos($type, '\\')) ? '\\think\\config\\driver\\' . ucwords($type) : $type;
+        $class = (false === strpos($type, '\\')) ? '\\Think\\config\\driver\\' . ucwords($type) : $type;
         self::set((new $class())->parse($config), '', $range);
     }
 
