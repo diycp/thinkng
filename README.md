@@ -1,4 +1,4 @@
-ThinkPHP 5.0.0 RC2
+ThinkPHP 5.2.x dev
 ===============
 
 [![Build Status](https://img.shields.io/travis/top-think/framework.svg)](https://travis-ci.org/top-think/framework)
