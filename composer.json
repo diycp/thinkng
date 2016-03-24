@@ -24,7 +24,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Think\\" : "./src"
+            "Think\\" : "./src",
+            "think\\" : "./src"
         },
         "files": [
              "./config/bootstrap.php"

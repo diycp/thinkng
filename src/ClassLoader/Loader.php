@@ -9,7 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think\ClassLoader;
+
+use think\Log;
 
 class Loader
 {
@@ -30,6 +32,14 @@ class Loader
     // 自动加载
     public static function autoload($class)
     {
+        //针对旧的兼容
+        if (strpos($class, 'think') !== false) {
+            $className = explode('\\', $class)[1];
+            $file = THINK_PATH . $className . '/' .  $className . '.php';
+            if (file_exists($file)) {
+                include $file;
+            }
+        }
         // 检测命名空间别名
         if (!empty(self::$namespaceAlias)) {
             $namespace = dirname($class);
@@ -121,7 +131,7 @@ class Loader
     public static function register($autoload = '')
     {
         // 注册系统自动加载
-        spl_autoload_register($autoload ? $autoload : 'think\\Loader::autoload');
+        spl_autoload_register($autoload ? $autoload : [__CLASS__, 'autoload']);
         // 注册composer自动加载
         self::registerComposerLoader();
     }

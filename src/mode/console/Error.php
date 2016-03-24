@@ -6,16 +6,20 @@
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: liu21st <liu21st@gmail.com>
+// | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
+namespace think;
 
-// [ 应用入口文件 ]
+class Error
+{
+    /**
+     * 注册异常处理
+     * @return void
+     */
+    public static function register()
+    {
+        ini_set("display_errors","Off");
+        //TODO
+    }
 
-// 定义应用目录
-define('APP_PATH', __DIR__ . '/../application/');
-// 开启调试模式
-define('APP_DEBUG', true);
-// 加载框架引导文件
-require __DIR__ . '/../../vendor/autoload.php';
-
-require __DIR__ . '/../../src/start.php';
+}

@@ -11,6 +11,8 @@
 
 namespace think;
 
+use Think\ClassLoader\Loader;
+
 // ThinkPHP 引导文件
 // 加载基础文件
 require __DIR__ . '/base.php';
