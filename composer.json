@@ -10,14 +10,14 @@
             "name": "liu21st",
             "email": "liu21st@gmail.com"
         },
-		{
+        {
             "name": "tao",
             "email": "taosikai@yeah.net"
         }
     ],
     "require": {
         "php": "~5.4",
-		"ext-intl": "*",
+        "ext-intl": "*",
         "ext-mbstring": "*",
         "ext-fileinfo": "*"
     },
