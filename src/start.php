@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace think;
+namespace Think;
 
 // ThinkPHP 引导文件
 defined('THINK_AUTOLOAD') or define('THINK_AUTOLOAD', getenv('THINK_AUTOLOAD') !== '0');

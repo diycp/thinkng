@@ -22,7 +22,7 @@ return [
     ],
 
     // 配置文件
-    'config'    => THINK_PATH . 'convention' . EXT,
+    'config'    => LIB_PATH . 'convention' . EXT,
 
     // 别名定义
     'alias'     => [

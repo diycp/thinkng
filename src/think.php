@@ -18,8 +18,6 @@ use Think\App\App;
 use Think\Config\Config;
 
 // ThinkPHP 引导文件
-// 加载基础文件
-require __DIR__ . '/base.php';
 
 // 加载环境变量配置文件
 if (is_file(ROOT_PATH . 'env' . EXT)) {
@@ -53,7 +51,6 @@ if (isset($mode['alias'])) {
 
 // 注册错误和异常处理机制
 Error::register();
-
 // 加载模式配置文件
 if (isset($mode['config'])) {
     is_array($mode['config']) ? Config::set($mode['config']) : Config::load($mode['config']);

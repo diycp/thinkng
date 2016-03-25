@@ -157,6 +157,7 @@ class Error
         } else {
             //ob_end_clean();
             extract($data);
+            var_dump(Config::get('exception_tmpl'));exit;
             include Config::get('exception_tmpl');
         }
     }
