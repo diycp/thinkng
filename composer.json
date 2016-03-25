@@ -1,18 +1,25 @@
 {
-    "name": "thinkphp/thinkphp",
-    "description": "the new thinkphp framework",
+    "name": "thinkphp/thinkng",
+    "description": "The next generation thinkphp framework",
     "type": "project",
     "keywords": ["framework", "thinkphp", "ORM"],
     "homepage": "http://thinkphp.cn/",
-    "license": "Apache2",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "liu21st",
             "email": "liu21st@gmail.com"
+        },
+		{
+            "name": "tao",
+            "email": "taosikai@yeah.net"
         }
     ],
     "require": {
-        "php": "~5.4"
+        "php": "~5.4",
+		"ext-intl": "*",
+        "ext-mbstring": "*",
+        "ext-fileinfo": "*"
     },
     "require-dev": {
         "johnkary/phpunit-speedtrap": "^1.0",
@@ -21,15 +28,12 @@
         "phpunit/phpunit": "4.8.*",
         "sebastian/phpcpd": "*",
         "squizlabs/php_codesniffer": "2.*",
-        
         "symfony/finder": "~3.0",
         "slince/console": "*@dev"
     },
     "autoload": {
         "psr-4": {
-            "Think\\" : "./src",
-            "think\\" : "./src",
-            "Command\\": "./command"
+            "Think\\" : "./src"
         },
         "files": [
              "./config/bootstrap.php"
