@@ -11,7 +11,7 @@
 
 namespace Think\Exception;
 
-use Think\Exception;
+use Think\Exception\Exception;
 
 /**
  * ThinkPHP错误异常

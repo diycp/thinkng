@@ -6,22 +6,17 @@
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://zjzit.cn>
+// | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
+// $Id$
 
-namespace Think\Exception;
+return [
+    '__pattern__' => [
+        'name' => '\w+',
+    ],
+    '[hello]'     => [
+        ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
+        ':name' => ['index/hello', ['method' => 'post']],
+    ],
 
-use Think\Exception\Exception;
-
-/**
- * Database相关异常处理类
- */
-class NotFoundException extends Exception 
-{
-    /**
-     * 系统异常后发送给客户端的HTTP Status
-     * @var integer
-     */
-    protected $httpStatus = 404;
-    
-}
+];

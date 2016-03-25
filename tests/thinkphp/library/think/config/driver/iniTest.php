@@ -6,31 +6,28 @@
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://zjzit.cn>
+// | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace Think\Exception;
-
-use Think\Exception\Exception;
-
 /**
- * Database相关异常处理类
+ * Ini配置测试
+ * @author    7IN0SAN9 <me@7in0.me>
  */
-class DbException extends Exception 
+
+namespace tests\thinkphp\library\think\config\driver;
+
+use think\config;
+
+class iniTest extends \PHPUnit_Framework_TestCase
 {
-    public function __construct($message, Array $config, $sql, $code = 10500)
+    public function testParse()
     {
-        $this->message  = $message;
-        $this->code     = $code;
-
-        $this->setData('Database Status', [
-            'Error Code'    => $code,
-            'Error Message' => $message,
-            'Error SQL'     => $sql
-        ]);
-
-        $this->setData('Database Config', $config);
+        Config::parse('inistring=1', 'ini');
+        $this->assertEquals(1, Config::get('inistring'));
+        Config::reset();
+        Config::parse(__DIR__ . '/fixtures/config.ini');
+        $this->assertTrue(Config::has('inifile'));
+        $this->assertEquals(1, Config::get('inifile'));
+        Config::reset();
     }
-
-
 }

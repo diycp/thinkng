@@ -11,7 +11,7 @@
 
 namespace Think\ClassLoader;
 
-use Think\Log;
+use Think\Log\Log;
 
 class Loader
 {
@@ -33,14 +33,13 @@ class Loader
     public static function autoload($class)
     {
         //针对旧的兼容；改造1需要兼容，此处废除兼容
-        /*
-        if (stripos($class, 'think') !== false) {
+        if (stripos($class, 'Think') !== false) {
             $className = explode('\\', $class)[1];
             $file = THINK_PATH . $className . '/' .  $className . '.php';
             if (file_exists($file)) {
                 include $file;
             }
-        }*/
+        }
         // 检测命名空间别名
         if (!empty(self::$namespaceAlias)) {
             $namespace = dirname($class);

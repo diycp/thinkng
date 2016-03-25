@@ -1,0 +1,73 @@
+[ 2016-03-25T06:17:38+00:00 ] 0.0.0.0 0.0.0.0 GET 
+[log] cmd:C:\Users\taosi\AppData\Roaming\Composer\vendor\bin\/../phpunit/phpunit/phpunit ./tests/ [运行时间：0.134706s] [吞吐率：7.42req/s] [内存消耗：2,061.25kb] [文件加载：49]
+[info] [ CONFIG ] C:\www\think\thinkng\src\convention.php
+[info] [ LOG ] INIT File: array (
+  'path' => 'C:\\www\\think\\thinkng\\tests\\runtime\\log\\',
+)
+
+[ 2016-03-25T06:17:49+00:00 ] 0.0.0.0 0.0.0.0 GET 
+[log] cmd:C:\Users\taosi\AppData\Roaming\Composer\vendor\bin\/../phpunit/phpunit/phpunit ./tests/ [运行时间：0.007783s] [吞吐率：128.49req/s] [内存消耗：263.13kb] [文件加载：32]
+[info] [ CONFIG ] C:\www\think\thinkng\src\convention.php
+[info] [ LOG ] INIT File: array (
+  'path' => 'C:\\www\\think\\thinkng\\tests\\runtime\\log\\',
+)
+
+[ 2016-03-25T06:18:12+00:00 ] 0.0.0.0 0.0.0.0 GET 
+[log] cmd:C:\Users\taosi\AppData\Roaming\Composer\vendor\bin\/../phpunit/phpunit/phpunit ./tests/ [运行时间：0.007454s] [吞吐率：134.16req/s] [内存消耗：262.96kb] [文件加载：32]
+[info] [ CONFIG ] C:\www\think\thinkng\src\convention.php
+[notice] autoloader error : C:\www\think\thinkng\src\think\Loader.php
+[info] [ LOG ] INIT File: array (
+  'path' => 'C:\\www\\think\\thinkng\\tests\\runtime\\log\\',
+)
+
+[ 2016-03-25T06:20:43+00:00 ] 0.0.0.0 0.0.0.0 GET 
+[log] cmd:C:\Users\taosi\AppData\Roaming\Composer\vendor\bin\/../phpunit/phpunit/phpunit ./tests/ [运行时间：0.009009s] [吞吐率：111.00req/s] [内存消耗：262.96kb] [文件加载：32]
+[info] [ CONFIG ] C:\www\think\thinkng\src\convention.php
+[notice] autoloader error : C:\www\think\thinkng\src\think\Loader.php
+[info] [ LOG ] INIT File: array (
+  'path' => 'C:\\www\\think\\thinkng\\tests\\runtime\\log\\',
+)
+
+[ 2016-03-25T06:24:18+00:00 ] 0.0.0.0 0.0.0.0 GET 
+[log] cmd:C:\Users\taosi\AppData\Roaming\Composer\vendor\bin\/../phpunit/phpunit/phpunit ./tests [运行时间：0.130637s] [吞吐率：7.65req/s] [内存消耗：2,061.29kb] [文件加载：49]
+[info] [ CONFIG ] C:\www\think\thinkng\src\convention.php
+[info] [ LOG ] INIT File: array (
+  'path' => 'C:\\www\\think\\thinkng\\tests\\runtime\\log\\',
+)
+
+[ 2016-03-25T06:25:42+00:00 ] 0.0.0.0 0.0.0.0 GET 
+[log] cmd:C:\Users\taosi\AppData\Roaming\Composer\vendor\bin\/../phpunit/phpunit/phpunit ./tests [运行时间：0.132534s] [吞吐率：7.55req/s] [内存消耗：2,061.29kb] [文件加载：49]
+[info] [ CONFIG ] C:\www\think\thinkng\src\convention.php
+[info] [ LOG ] INIT File: array (
+  'path' => 'C:\\www\\think\\thinkng\\tests\\runtime\\log\\',
+)
+
+[ 2016-03-25T06:30:48+00:00 ] 0.0.0.0 0.0.0.0 GET 
+[log] cmd:C:\Users\taosi\AppData\Roaming\Composer\vendor\bin\/../phpunit/phpunit/phpunit ./tests/ [运行时间：0.133768s] [吞吐率：7.48req/s] [内存消耗：2,064.13kb] [文件加载：49]
+[info] [ CONFIG ] C:\www\think\thinkng\src\convention.php
+[info] [ LOG ] INIT File: array (
+  'path' => 'C:\\www\\think\\thinkng\\tests\\runtime\\log\\',
+)
+
+[ 2016-03-25T07:03:01+00:00 ] 0.0.0.0 0.0.0.0 GET 
+[log] cmd:C:\Users\taosi\AppData\Roaming\Composer\vendor\bin\/../phpunit/phpunit/phpunit ./tests/ [运行时间：0.260411s] [吞吐率：3.84req/s] [内存消耗：3,806.48kb] [文件加载：62]
+[info] [ CONFIG ] C:\www\think\thinkng\src\convention.php
+[info] [ LOG ] INIT File: array (
+  'path' => 'C:\\www\\think\\thinkng\\tests\\runtime\\log\\',
+)
+
+[ 2016-03-25T07:03:33+00:00 ] 0.0.0.0 0.0.0.0 GET 
+[log] cmd:C:\Users\taosi\AppData\Roaming\Composer\vendor\bin\/../phpunit/phpunit/phpunit ./tests/ [运行时间：0.262854s] [吞吐率：3.80req/s] [内存消耗：3,806.48kb] [文件加载：62]
+[info] [ CONFIG ] C:\www\think\thinkng\src\convention.php
+[info] [ LOG ] INIT File: array (
+  'path' => 'C:\\www\\think\\thinkng\\tests\\runtime\\log\\',
+)
+
+[ 2016-03-25T07:05:06+00:00 ] 0.0.0.0 0.0.0.0 GET 
+[log] cmd:C:\Users\taosi\AppData\Roaming\Composer\vendor\bin\/../phpunit/phpunit/phpunit ./tests/ [运行时间：2.778027s] [吞吐率：0.36req/s] [内存消耗：3,475.37kb] [文件加载：63]
+[info] [ CONFIG ] C:\www\think\thinkng\src\convention.php
+[error] [8]Use of undefined constant Think_PATH - assumed 'Think_PATH'[C:\www\think\thinkng\tests\thinkphp\library\think\controllerTest.php:23]
+[info] [ LOG ] INIT File: array (
+  'path' => 'C:\\www\\think\\thinkng\\tests\\runtime\\log\\',
+)
+

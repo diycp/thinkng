@@ -6,22 +6,23 @@
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://zjzit.cn>
+// | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace Think\Exception;
-
-use Think\Exception\Exception;
-
 /**
- * Database相关异常处理类
+ * Db类测试
  */
-class NotFoundException extends Exception 
+
+namespace tests\thinkphp\library\think;
+
+use \think\Db;
+
+class dbTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * 系统异常后发送给客户端的HTTP Status
-     * @var integer
-     */
-    protected $httpStatus = 404;
-    
+    public function testConnect()
+    {
+        Db::connect('mysql://root@127.0.0.1/test#utf8');
+        Db::execute('show databases');
+    }
+
 }
