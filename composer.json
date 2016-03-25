@@ -1,5 +1,5 @@
 {
-    "name": "thinkphp/thinkng",
+    "name": "topthink/thinkng",
     "description": "The next generation thinkphp framework",
     "type": "library",
     "keywords": ["framework", "thinkphp", "ORM"],
