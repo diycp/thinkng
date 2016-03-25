@@ -38,5 +38,6 @@
         "files": [
              "./config/bootstrap.php"
         ]
-    }
+    },
+    "minimum-stability": "dev"
 }
