@@ -12,6 +12,7 @@
 namespace Think\ClassLoader;
 
 use Think\Log\Log;
+use Cake\Utility\Inflector;
 
 class Loader
 {
@@ -341,27 +342,32 @@ class Loader
     public static function controller($name, $layer = '', $empty = '')
     {
         static $_instance = [];
-        $layer            = $layer ?: CONTROLLER_LAYER;
+        $layer = $layer ?  : CONTROLLER_LAYER;
         if (isset($_instance[$name . $layer])) {
             return $_instance[$name . $layer];
         }
         if (strpos($name, '/')) {
-            list($module, $name) = explode('/', $name);
+            list ($module, $name) = explode('/', $name);
         } else {
             $module = APP_MULTI_MODULE ? MODULE_NAME : '';
         }
-        $class = self::parseClass($module, $layer, $name);
+        $class = self::parseClass(self::parseName($module, 1), self::parseName($layer, 1), $name);
         if (class_exists($class)) {
-            $action                    = new $class;
+            $action = new $class();
             $_instance[$name . $layer] = $action;
             return $action;
         } elseif ($empty && class_exists($emptyClass = self::parseClass($module, $layer, $empty))) {
-            return new $emptyClass;
+            return new $emptyClass();
         } else {
             throw new \Exception('class [ ' . $class . ' ] not exists', 10001);
         }
     }
 
+    protected function classifyControllerClass($class)
+    {
+        
+    }
+    
     /**
      * 实例化验证类 格式：[模块名/]验证器名
      * @param string $name 资源地址

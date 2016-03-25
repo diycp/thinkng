@@ -11,11 +11,12 @@
 
 namespace Think\Controller;
 
-\Think\Loader::import('controller/Jump', TRAIT_PATH, EXT);
+use Think\View\View;
+use Think\Config\Config;
 
 class Controller
 {
-    use \traits\controller\Jump;
+    use JumpTrait;
 
     // 视图类实例
     protected $view = null;
@@ -33,7 +34,7 @@ class Controller
      */
     public function __construct()
     {
-        $this->view = \Think\View::instance(Config::get());
+        $this->view = View::instance(Config::get());
 
         // 控制器初始化
         if (method_exists($this, '_initialize')) {
