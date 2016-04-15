@@ -234,7 +234,7 @@ class App
         $instance = Loader::controller(CONTROLLER_NAME, '', Config::get('empty_controller'));
         // 获取当前操作名
         $action = ACTION_NAME . Config::get('action_suffix');
-
+        $action = Loader::parseName($action, 2);
         try {
             // 操作方法开始监听
             $call = [$instance, $action];

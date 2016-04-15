@@ -12,7 +12,6 @@
 namespace Think\ClassLoader;
 
 use Think\Log\Log;
-use Cake\Utility\Inflector;
 
 class Loader
 {
@@ -491,8 +490,8 @@ class Loader
      */
     public static function parseClass($module, $layer, $name)
     {
-        $module=self::parseName($module,1);
-        $layer=self::parseName($layer,1);
+        $module = self::parseName($module,1);
+        $layer = self::parseName($layer,1);
         $name  = str_replace(['/', '.'], '\\', $name);
         $array = explode('\\', $name);
         $class = self::parseName(array_pop($array), 1) . (CLASS_APPEND_SUFFIX ? ucfirst($layer) : '');
