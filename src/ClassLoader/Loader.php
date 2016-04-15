@@ -351,7 +351,7 @@ class Loader
         } else {
             $module = APP_MULTI_MODULE ? MODULE_NAME : '';
         }
-        $class = self::parseClass(self::parseName($module, 1), self::parseName($layer, 1), $name);
+        $class = self::parseClass($module, $layer, $name);
         if (class_exists($class)) {
             $action = new $class();
             $_instance[$name . $layer] = $action;
@@ -491,6 +491,8 @@ class Loader
      */
     public static function parseClass($module, $layer, $name)
     {
+        $module=self::parseName($module,1);
+        $layer=self::parseName($layer,1);
         $name  = str_replace(['/', '.'], '\\', $name);
         $array = explode('\\', $name);
         $class = self::parseName(array_pop($array), 1) . (CLASS_APPEND_SUFFIX ? ucfirst($layer) : '');

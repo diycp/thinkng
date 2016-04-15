@@ -203,8 +203,8 @@ class App
             define('MODULE_NAME', strip_tags($module));
 
             // 模块初始化
-            if (MODULE_NAME && !in_array(MODULE_NAME, $config['deny_module_list']) && is_dir(APP_PATH . MODULE_NAME)) {
-                define('MODULE_PATH', APP_PATH . MODULE_NAME . DS);
+            if (MODULE_NAME && !in_array(MODULE_NAME, $config['deny_module_list']) && is_dir(APP_PATH . Loader::parseName( MODULE_NAME,1))) {
+                define('MODULE_PATH', APP_PATH . Loader::parseName(MODULE_NAME,1) . DS);
                 define('VIEW_PATH', MODULE_PATH . VIEW_LAYER . DS);
                 // 初始化模块
                 self::initModule(MODULE_NAME, $config);
