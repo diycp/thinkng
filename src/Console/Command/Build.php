@@ -9,39 +9,39 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace Think\Console\Command;
+    namespace Think\Console\Command;
 
-use Think\Console\Input;
-use Think\Console\Input\Option;
-use Think\Console\Output;
+    use Think\Console\Input;
+    use Think\Console\Input\Option;
+    use Think\Console\Output;
 
-class Build extends Command
-{
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function configure()
-    {
-        $this->setName('build')
-             ->setDefinition([new Option('config', null, Option::VALUE_OPTIONAL, "build.php path", APP_PATH . 'build.php')])
-             ->setDescription('Build Application Dirs');
-    }
-
-    protected function execute(Input $input, Output $output)
+    class Build extends Command
     {
 
-        if ($input->hasOption('config')) {
-            $build = include $input->getOption('config');
-        } else {
-            $build = include APP_PATH . 'build.php';
+        /**
+         * {@inheritdoc}
+         */
+        protected function configure()
+        {
+            $this->setName('build')
+                ->setDefinition([new Option('config', null, Option::VALUE_OPTIONAL, "build.php path", APP_PATH . 'build.php')])
+                ->setDescription('Build Application Dirs');
         }
-        if (empty($build)) {
-            $output->writeln("Build Config Is Empty");
-            return;
-        }
-        \Think\Build::run($build);
-        $output->writeln("Successed");
 
+        protected function execute(Input $input, Output $output)
+        {
+
+            if ($input->hasOption('config')) {
+                $build = include $input->getOption('config');
+            } else {
+                $build = include APP_PATH . 'build.php';
+            }
+            if (empty($build)) {
+                $output->writeln("Build Config Is Empty");
+                return;
+            }
+            \Think\Build::run($build);
+            $output->writeln("Successed");
+
+        }
     }
-}

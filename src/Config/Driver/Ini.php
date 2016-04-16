@@ -9,16 +9,16 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace Think\Config\Driver;
+    namespace Think\Config\Driver;
 
-class Ini
-{
-    public function parse($config)
+    class Ini
     {
-        if (is_file($config)) {
-            return parse_ini_file($config, true);
-        } else {
-            return parse_ini_string($config, true);
+        public function parse($config)
+        {
+            if (is_file($config)) {
+                return parse_ini_file($config, true);
+            } else {
+                return parse_ini_string($config, true);
+            }
         }
     }
-}

@@ -8,18 +8,19 @@
 // +----------------------------------------------------------------------
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
-namespace Think;
+    namespace Think;
 
-class Error
-{
-    /**
-     * 注册异常处理
-     * @return void
-     */
-    public static function register()
+    class Error
     {
-        ini_set("display_errors","Off");
-        //TODO
-    }
+        /**
+         * 注册异常处理
+         *
+         * @return void
+         */
+        public static function register()
+        {
+            ini_set("display_errors", "Off");
+            //TODO
+        }
 
-}
+    }

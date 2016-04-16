@@ -9,13 +9,13 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace Think\Model;
+    namespace Think\Model;
 
-\Think\Loader::import('model/Adv', TRAIT_PATH, EXT);
-\Think\Loader::import('model/Transaction', TRAIT_PATH, EXT);
+    \Think\Loader::import('model/Adv', TRAIT_PATH, EXT);
+    \Think\Loader::import('model/Transaction', TRAIT_PATH, EXT);
 
-class Adv extends Model
-{
-    use \traits\model\Adv;
-    use \traits\model\Transaction;
-}
+    class Adv extends Model
+    {
+        use \traits\model\Adv;
+        use \traits\model\Transaction;
+    }

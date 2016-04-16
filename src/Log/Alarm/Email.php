@@ -8,33 +8,36 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-namespace Think\Log\Alarm;
-
-/**
- * 邮件通知驱动
- */
-class Email
-{
-
-    protected $config = [
-        'address' => '',
-    ];
-
-    // 实例化并传入参数
-    public function __construct($config = [])
-    {
-        $this->config = array_merge($this->config, $config);
-    }
+    namespace Think\Log\Alarm;
 
     /**
-     * 通知发送接口
-     * @access public
-     * @param string $msg 日志信息
-     * @return bool
+     * 邮件通知驱动
      */
-    public function send($msg = '')
+    class Email
     {
-        return error_log($msg, 1, $this->config['address']);
-    }
 
-}
+        protected $config = [
+            'address' => '',
+        ];
+
+        // 实例化并传入参数
+        public function __construct($config = [])
+        {
+            $this->config = array_merge($this->config, $config);
+        }
+
+        /**
+         * 通知发送接口
+         *
+         * @access public
+         *
+         * @param string $msg 日志信息
+         *
+         * @return bool
+         */
+        public function send($msg = '')
+        {
+            return error_log($msg, 1, $this->config['address']);
+        }
+
+    }

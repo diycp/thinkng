@@ -9,26 +9,26 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-/**
- * Test File Log
- */
-namespace tests\thinkphp\library\think\log\driver;
+    /**
+     * Test File Log
+     */
+    namespace tests\thinkphp\library\think\log\driver;
 
-use think\Log;
+    use think\Log;
 
-class fileTest extends \PHPUnit_Framework_TestCase
-{
-    protected function setUp()
+    class fileTest extends \PHPUnit_Framework_TestCase
     {
-        Log::init(['type' => 'file']);
-    }
+        protected function setUp()
+        {
+            Log::init(['type' => 'file']);
+        }
 
-    public function testRecord()
-    {
-        $record_msg = 'record';
-        Log::record($record_msg, 'notice');
-        $logs = Log::getLog();
+        public function testRecord()
+        {
+            $record_msg = 'record';
+            Log::record($record_msg, 'notice');
+            $logs = Log::getLog();
 
-        $this->assertNotFalse(array_search(['type' => 'notice', 'msg' => $record_msg], $logs));
+            $this->assertNotFalse(array_search(['type' => 'notice', 'msg' => $record_msg], $logs));
+        }
     }
-}

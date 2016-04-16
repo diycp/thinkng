@@ -1,11 +1,11 @@
 <?php
-use Slince\Console\Console;
-use Command\ModifyNamespaceCase;
+    use Command\ModifyNamespaceCase;
+    use Slince\Console\Console;
 
-include __DIR__ . '/../vendor/autoload.php';
+    include __DIR__ . '/../vendor/autoload.php';
 
-$console = new Console();
-$console->addCommands([
-    new ModifyNamespaceCase()
-]);
-$console->run();
+    $console = new Console();
+    $console->addCommands([
+        new ModifyNamespaceCase(),
+    ]);
+    $console->run();

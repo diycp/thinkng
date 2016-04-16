@@ -9,11 +9,11 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace Think\Model;
+    namespace Think\Model;
 
-\Think\Loader::import('model/Relation', TRAIT_PATH, EXT);
+    \Think\Loader::import('model/Relation', TRAIT_PATH, EXT);
 
-class Relation extends Model
-{
-    use \traits\model\Relation;
-}
+    class Relation extends Model
+    {
+        use \traits\model\Relation;
+    }

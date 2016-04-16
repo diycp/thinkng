@@ -9,20 +9,20 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-/**
- * Db类测试
- */
+    /**
+     * Db类测试
+     */
 
-namespace tests\thinkphp\library\think;
+    namespace tests\thinkphp\library\think;
 
-use \think\Db;
+    use \think\Db;
 
-class dbTest extends \PHPUnit_Framework_TestCase
-{
-    public function testConnect()
+    class dbTest extends \PHPUnit_Framework_TestCase
     {
-        Db::connect('mysql://root@127.0.0.1/test#utf8');
-        Db::execute('show databases');
-    }
+        public function testConnect()
+        {
+            Db::connect('mysql://root@127.0.0.1/test#utf8');
+            Db::execute('show databases');
+        }
 
-}
+    }
