@@ -22,7 +22,7 @@ return [
     ],
 
     // 配置文件
-    'config'    => ROOT_PATH . '/config/convention' . EXT,
+    'config'    => THINK_PATH . '/src/Util/convention' . EXT,
 
     // 别名定义
     'alias'     => [

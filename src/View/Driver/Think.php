@@ -8,38 +8,41 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-namespace Think\View\Driver;
+    namespace Think\View\Driver;
 
-use Think\Template;
+    use Think\Template\Template;
 
-class Think
-{
-    private $template = null;
-
-    public function __construct($config = [])
+    class Think
     {
-        $this->template = new Template($config);
-    }
+        private $template = null;
 
-    /**
-     * 渲染模板文件
-     * @access public
-     * @param string $template 模板文件或者内容
-     * @param array $data 模板变量
-     * @param array $config 模板参数
-     * @return void
-     */
-    public function fetch($template, $data = [], $config = [])
-    {
-        if (is_file($template)) {
-            $this->template->display($template, $data, $config);
-        } else {
-            $this->template->fetch($template, $data);
+        public function __construct($config = [])
+        {
+            $this->template = new Template($config);
+        }
+
+        /**
+         * 渲染模板文件
+         *
+         * @access public
+         *
+         * @param string $template 模板文件或者内容
+         * @param array  $data     模板变量
+         * @param array  $config   模板参数
+         *
+         * @return void
+         */
+        public function fetch($template, $data = [], $config = [])
+        {
+            if (is_file($template)) {
+                $this->template->display($template, $data, $config);
+            } else {
+                $this->template->fetch($template, $data);
+            }
+        }
+
+        public function __call($method, $params)
+        {
+            return call_user_func_array([$this->template, $method], $params);
         }
     }
-
-    public function __call($method, $params)
-    {
-        return call_user_func_array([$this->template, $method], $params);
-    }
-}
