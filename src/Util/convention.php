@@ -12,7 +12,7 @@
         // 扩展配置文件
         'extra_config_list'      => ['database', 'route', 'validate', 'auto'],
         // 扩展函数文件
-        'extra_file_list'        => [THINK_PATH . 'src/Util/helper' . EXT],
+        'extra_file_list'        => [THINK_PATH . 'src'.DS.'Util'.DS.'helper' . EXT],
         // 默认输出类型
         'default_return_type'    => 'html',
         // 默认语言
@@ -99,15 +99,15 @@
         // +----------------------------------------------------------------------
 
         // 默认跳转页面对应的模板文件
-        'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
-        'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
+        'dispatch_success_tmpl'  => THINK_PATH . 'src'.DS.'Tpl' . DS . 'dispatch_jump.tpl',
+        'dispatch_error_tmpl'    => THINK_PATH . 'src'.DS.'Tpl' . DS . 'dispatch_jump.tpl',
 
         // +----------------------------------------------------------------------
         // | 异常及错误设置
         // +----------------------------------------------------------------------
 
         // 异常页面的模板文件
-        'exception_tmpl'         => THINK_PATH . 'tpl' . DS . 'think_exception.tpl',
+        'exception_tmpl'         => THINK_PATH . 'src'.DS.'Tpl' . DS . 'think_exception.tpl',
         // 异常处理忽略的错误类型，支持PHP所有的错误级别常量，多个级别可以用|运算法
         // 参考：http://php.net/manual/en/errorfunc.constants.php
         'exception_ignore_type'  => 0,
