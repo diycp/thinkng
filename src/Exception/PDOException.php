@@ -9,26 +9,26 @@
 // | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://zjzit.cn>
 // +----------------------------------------------------------------------
 
-namespace Think\Exception;
+    namespace Think\Exception;
 
-use Think\Exception\DbException;
+    use Think\Exception\DbException;
 
-/**
- * PDO异常处理类
- * 重新封装了系统的\PDOException类
- */
-class PDOException extends DbException 
-{
-    public function __construct(\PDOException $exception, Array $config, $sql, $code = 10501)
+    /**
+     * PDO异常处理类
+     * 重新封装了系统的\PDOException类
+     */
+    class PDOException extends DbException
     {
-        $error = $exception->errorInfo;
+        public function __construct(\PDOException $exception, Array $config, $sql, $code = 10501)
+        {
+            $error = $exception->errorInfo;
 
-        $this->setData('PDO Error Info', [
-            'SQLSTATE'             => $error[0],
-            'Driver Error Code'    => $error[1],
-            'Driver Error Message' => isset($error[2]) ? $error[2] : ''
-        ]);
+            $this->setData('PDO Error Info', [
+                'SQLSTATE'             => $error[0],
+                'Driver Error Code'    => $error[1],
+                'Driver Error Message' => isset($error[2]) ? $error[2] : '',
+            ]);
 
-        parent::__construct($exception->getMessage(), $config, $sql, $code);
+            parent::__construct($exception->getMessage(), $config, $sql, $code);
+        }
     }
-}

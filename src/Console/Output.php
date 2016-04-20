@@ -9,78 +9,79 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace Think\Console;
+    namespace Think\Console;
 
-use Think\Console\Output\Formatter;
-use Think\Console\Output\Stream;
+    use Think\Console\Output\Formatter;
+    use Think\Console\Output\Stream;
 
-class Output extends Stream
-{
-
-    /** @var Stream */
-    private $stderr;
-
-    public function __construct()
+    class Output extends Stream
     {
-        $outputStream = 'php://stdout';
-        if (!$this->hasStdoutSupport()) {
-            $outputStream = 'php://output';
+
+        /** @var Stream */
+        private $stderr;
+
+        public function __construct()
+        {
+            $outputStream = 'php://stdout';
+            if (!$this->hasStdoutSupport()) {
+                $outputStream = 'php://output';
+            }
+
+            parent::__construct(fopen($outputStream, 'w'));
+
+            $this->stderr = new Stream(fopen('php://stderr', 'w'), $this->getFormatter());
         }
 
-        parent::__construct(fopen($outputStream, 'w'));
+        /**
+         * {@inheritdoc}
+         */
+        public function setDecorated($decorated)
+        {
+            parent::setDecorated($decorated);
+            $this->stderr->setDecorated($decorated);
+        }
 
-        $this->stderr = new Stream(fopen('php://stderr', 'w'), $this->getFormatter());
-    }
+        /**
+         * {@inheritdoc}
+         */
+        public function setFormatter(Formatter $formatter)
+        {
+            parent::setFormatter($formatter);
+            $this->stderr->setFormatter($formatter);
+        }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function setDecorated($decorated)
-    {
-        parent::setDecorated($decorated);
-        $this->stderr->setDecorated($decorated);
-    }
+        /**
+         * {@inheritdoc}
+         */
+        public function setVerbosity($level)
+        {
+            parent::setVerbosity($level);
+            $this->stderr->setVerbosity($level);
+        }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function setFormatter(Formatter $formatter)
-    {
-        parent::setFormatter($formatter);
-        $this->stderr->setFormatter($formatter);
-    }
+        /**
+         * {@inheritdoc}
+         */
+        public function getErrorOutput()
+        {
+            return $this->stderr;
+        }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function setVerbosity($level)
-    {
-        parent::setVerbosity($level);
-        $this->stderr->setVerbosity($level);
-    }
+        /**
+         * {@inheritdoc}
+         */
+        public function setErrorOutput(Output $error)
+        {
+            $this->stderr = $error;
+        }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getErrorOutput()
-    {
-        return $this->stderr;
+        /**
+         * 检查当前环境是否支持控制台输出写入标准输出。
+         *
+         * @return bool
+         */
+        protected function hasStdoutSupport()
+        {
+            return ('OS400' != php_uname('s'));
+        }
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setErrorOutput(Output $error)
-    {
-        $this->stderr = $error;
-    }
-
-    /**
-     * 检查当前环境是否支持控制台输出写入标准输出。
-     * @return bool
-     */
-    protected function hasStdoutSupport()
-    {
-        return ('OS400' != php_uname('s'));
-    }
-}

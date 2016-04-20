@@ -9,35 +9,36 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-/**
- * 数据库缓存驱动测试
- * @author    mahuan <mahuan@d1web.top>
- */
-
-namespace tests\thinkphp\library\think\cache\driver;
-
-class dbTest extends cacheTestCase
-{
-    private $_cacheInstance = null;
-
     /**
-     * 基境缓存类型
+     * 数据库缓存驱动测试
+     *
+     * @author    mahuan <mahuan@d1web.top>
      */
-    protected function setUp()
-    {
-        //数据库缓存测试因为缺少数据库单元测试所以暂时跳过
-        $this->markTestSkipped("暂时跳过测试。");
-        \think\Cache::connect(array('type' => 'db', 'expire' => 2));
-    }
 
-    /**
-     * @return DbCache
-     */
-    protected function getCacheInstance()
+    namespace tests\thinkphp\library\think\cache\driver;
+
+    class dbTest extends cacheTestCase
     {
-        if (null === $this->_cacheInstance) {
-            $this->_cacheInstance = new \think\cache\driver\Db();
+        private $_cacheInstance = null;
+
+        /**
+         * 基境缓存类型
+         */
+        protected function setUp()
+        {
+            //数据库缓存测试因为缺少数据库单元测试所以暂时跳过
+            $this->markTestSkipped("暂时跳过测试。");
+            \think\Cache::connect(['type' => 'db', 'expire' => 2]);
         }
-        return $this->_cacheInstance;
+
+        /**
+         * @return DbCache
+         */
+        protected function getCacheInstance()
+        {
+            if (null === $this->_cacheInstance) {
+                $this->_cacheInstance = new \think\cache\driver\Db();
+            }
+            return $this->_cacheInstance;
+        }
     }
-}

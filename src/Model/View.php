@@ -9,11 +9,11 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace Think\Model;
+    namespace Think\Model;
 
-\Think\Loader::import('model/View', TRAIT_PATH, EXT);
+    \Think\Loader::import('model/View', TRAIT_PATH, EXT);
 
-class View extends Model
-{
-    use \traits\model\View;
-}
+    class View extends Model
+    {
+        use \traits\model\View;
+    }

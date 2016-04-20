@@ -12,8 +12,8 @@
     namespace Think\Url;
 
     use Think\Cache\Cache;
-    use Think\Routing\Route;
     use Think\Config\Config;
+    use Think\Routing\Route;
 
     class Url
     {

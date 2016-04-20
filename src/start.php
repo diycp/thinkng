@@ -9,11 +9,11 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace Think;
+    namespace Think;
 
 // ThinkPHP 引导文件
-defined('THINK_AUTOLOAD') or define('THINK_AUTOLOAD', getenv('THINK_AUTOLOAD') !== '0');
+    defined('THINK_AUTOLOAD') or define('THINK_AUTOLOAD', getenv('THINK_AUTOLOAD') !== '0');
 
-if (THINK_AUTOLOAD) {
-    require_once __DIR__ . '/think.php';
-}
+    if (THINK_AUTOLOAD) {
+        require_once __DIR__ . '/think.php';
+    }

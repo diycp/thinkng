@@ -8,55 +8,60 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-namespace Think\Controller;
-
-/**
- * ThinkPHP RPC控制器类
- */
-abstract class Rpc
-{
-
-    protected $allowMethodList = '';
-    protected $debug           = false;
+    namespace Think\Controller;
 
     /**
-     * 架构函数
-     * @access public
+     * ThinkPHP RPC控制器类
      */
-    public function __construct()
+    abstract class Rpc
     {
-        //控制器初始化
-        if (method_exists($this, '_initialize')) {
-            $this->_initialize();
+
+        protected $allowMethodList = '';
+        protected $debug = false;
+
+        /**
+         * 架构函数
+         *
+         * @access public
+         */
+        public function __construct()
+        {
+            //控制器初始化
+            if (method_exists($this, '_initialize')) {
+                $this->_initialize();
+            }
+
+            //导入类库
+            \Think\Loader::import('vendor.phprpc.phprpc_server');
+            //实例化phprpc
+            $server = new \PHPRPC_Server();
+            if ($this->allowMethodList) {
+                $methods = $this->allowMethodList;
+            } else {
+                $methods = get_class_methods($this);
+                $methods = array_diff($methods, ['__construct', '__call', '_initialize']);
+            }
+            $server->add($methods, $this);
+
+            if (APP_DEBUG || $this->debug) {
+                $server->setDebugMode(true);
+            }
+            $server->setEnableGZIP(true);
+            $server->start();
+            echo $server->comment();
         }
 
-        //导入类库
-        \Think\Loader::import('vendor.phprpc.phprpc_server');
-        //实例化phprpc
-        $server = new \PHPRPC_Server();
-        if ($this->allowMethodList) {
-            $methods = $this->allowMethodList;
-        } else {
-            $methods = get_class_methods($this);
-            $methods = array_diff($methods, array('__construct', '__call', '_initialize'));
+        /**
+         * 魔术方法 有不存在的操作的时候执行
+         *
+         * @access public
+         *
+         * @param string $method 方法名
+         * @param array  $args   参数
+         *
+         * @return mixed
+         */
+        public function __call($method, $args)
+        {
         }
-        $server->add($methods, $this);
-
-        if (APP_DEBUG || $this->debug) {
-            $server->setDebugMode(true);
-        }
-        $server->setEnableGZIP(true);
-        $server->start();
-        echo $server->comment();
     }
-
-    /**
-     * 魔术方法 有不存在的操作的时候执行
-     * @access public
-     * @param string $method 方法名
-     * @param array $args 参数
-     * @return mixed
-     */
-    public function __call($method, $args)
-    {}
-}

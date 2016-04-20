@@ -1,7 +1,7 @@
 <?php
-namespace top\test;
+    namespace top\test;
 
-class Hello
-{
+    class Hello
+    {
 
-}
+    }

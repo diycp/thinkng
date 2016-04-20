@@ -9,51 +9,52 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-/**
- * File缓存驱动测试
- * @author    刘志淳 <chun@engineer.com>
- */
-
-namespace tests\thinkphp\library\think\cache\driver;
-
-class fileTest extends cacheTestCase
-{
-    private $_cacheInstance = null;
-
     /**
-     * 基境缓存类型
+     * File缓存驱动测试
+     *
+     * @author    刘志淳 <chun@engineer.com>
      */
-    protected function setUp()
-    {
-        \think\Cache::connect(['type' => 'File', 'path'=> CACHE_PATH]);
-    }
 
-    /**
-     * @return FileCache
-     */
-    protected function getCacheInstance()
+    namespace tests\thinkphp\library\think\cache\driver;
+
+    class fileTest extends cacheTestCase
     {
-        if (null === $this->_cacheInstance) {
-            $this->_cacheInstance = new \think\cache\driver\File();
+        private $_cacheInstance = null;
+
+        /**
+         * 基境缓存类型
+         */
+        protected function setUp()
+        {
+            \think\Cache::connect(['type' => 'File', 'path' => CACHE_PATH]);
         }
-        return $this->_cacheInstance;
-    }
 
-    // rewrite testQueue
-    public function testQueue()
-    {
-        $cache = $this->prepare();
-        $this->assertTrue($cache->set('1', '1'));
-        $this->assertTrue($cache->set('2', '2'));
-        $this->assertTrue($cache->set('3', '3'));
-        $this->assertEquals(1, $cache->get('1'));
-        $this->assertTrue($cache->set('4', '4'));
-        $this->assertTrue($cache->set('1', false));
-        $this->assertFalse($cache->get('1'));
-    }
+        /**
+         * @return FileCache
+         */
+        protected function getCacheInstance()
+        {
+            if (null === $this->_cacheInstance) {
+                $this->_cacheInstance = new \think\cache\driver\File();
+            }
+            return $this->_cacheInstance;
+        }
 
-    // skip testExpire
-    public function testExpire()
-    {
+        // rewrite testQueue
+        public function testQueue()
+        {
+            $cache = $this->prepare();
+            $this->assertTrue($cache->set('1', '1'));
+            $this->assertTrue($cache->set('2', '2'));
+            $this->assertTrue($cache->set('3', '3'));
+            $this->assertEquals(1, $cache->get('1'));
+            $this->assertTrue($cache->set('4', '4'));
+            $this->assertTrue($cache->set('1', false));
+            $this->assertFalse($cache->get('1'));
+        }
+
+        // skip testExpire
+        public function testExpire()
+        {
+        }
     }
-}

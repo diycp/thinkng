@@ -9,25 +9,25 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-namespace Think\Console\Command;
+    namespace Think\Console\Command;
 
 
-use Think\Console\Input;
-use Think\Console\Output;
-use Think\Console\Input\Argument as InputArgument;
-use Think\Console\Input\Option as InputOption;
-use Think\Console\Input\Definition as InputDefinition;
-use Think\Console\Helper\Descriptor as DescriptorHelper;
+    use Think\Console\Input;
+    use Think\Console\Output;
+    use Think\Console\Input\Argument as InputArgument;
+    use Think\Console\Input\Option as InputOption;
+    use Think\Console\Input\Definition as InputDefinition;
+    use Think\Console\Helper\Descriptor as DescriptorHelper;
 
-class Lists extends Command
-{
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function configure()
+    class Lists extends Command
     {
-        $this->setName('list')->setDefinition($this->createDefinition())->setDescription('Lists commands')->setHelp(<<<EOF
+
+        /**
+         * {@inheritdoc}
+         */
+        protected function configure()
+        {
+            $this->setName('list')->setDefinition($this->createDefinition())->setDescription('Lists commands')->setHelp(<<<EOF
 The <info>%command.name%</info> command lists all commands:
 
   <info>php %command.full_name%</info>
@@ -40,38 +40,38 @@ It's also possible to get raw list of commands (useful for embedding command run
 
   <info>php %command.full_name% --raw</info>
 EOF
-        );
-    }
+            );
+        }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getNativeDefinition()
-    {
-        return $this->createDefinition();
-    }
+        /**
+         * {@inheritdoc}
+         */
+        public function getNativeDefinition()
+        {
+            return $this->createDefinition();
+        }
 
-    /**
-     * {@inheritdoc}
-     */
-    protected function execute(Input $input, Output $output)
-    {
+        /**
+         * {@inheritdoc}
+         */
+        protected function execute(Input $input, Output $output)
+        {
 
-        $helper = new DescriptorHelper();
-        $helper->describe($output, $this->getConsole(), [
-            'raw_text'  => $input->getOption('raw'),
-            'namespace' => $input->getArgument('namespace'),
-        ]);
-    }
+            $helper = new DescriptorHelper();
+            $helper->describe($output, $this->getConsole(), [
+                'raw_text'  => $input->getOption('raw'),
+                'namespace' => $input->getArgument('namespace'),
+            ]);
+        }
 
-    /**
-     * {@inheritdoc}
-     */
-    private function createDefinition()
-    {
-        return new InputDefinition([
-            new InputArgument('namespace', InputArgument::OPTIONAL, 'The namespace name'),
-            new InputOption('raw', null, InputOption::VALUE_NONE, 'To output raw command list')
-        ]);
+        /**
+         * {@inheritdoc}
+         */
+        private function createDefinition()
+        {
+            return new InputDefinition([
+                new InputArgument('namespace', InputArgument::OPTIONAL, 'The namespace name'),
+                new InputOption('raw', null, InputOption::VALUE_NONE, 'To output raw command list'),
+            ]);
+        }
     }
-}
