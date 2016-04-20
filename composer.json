@@ -16,10 +16,7 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "ext-intl": "*",
-        "ext-mbstring": "*",
-        "ext-fileinfo": "*"
+        "php": ">=5.4.0"
     },
     "require-dev": {
         "johnkary/phpunit-speedtrap": "^1.0",
