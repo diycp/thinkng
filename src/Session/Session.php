@@ -10,6 +10,9 @@
 // +----------------------------------------------------------------------
     namespace Think\Session;
 
+    use Think\Config\Config;
+    use Think\Log\Log;
+
     class Session
     {
 
