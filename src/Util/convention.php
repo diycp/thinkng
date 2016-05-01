@@ -90,9 +90,9 @@
         // 域名根，如.thinkphp.cn
         'url_domain_root'        => '',
         // 是否自动转换URL中的控制器名
-        'url_controller_convert' => true,
+        'url_controller_convert' => false,
         // 是否自动转换URL中的操作名
-        'url_action_convert'     => true,
+        'url_action_convert'     => false,
 
         // +----------------------------------------------------------------------
         // | 视图及模板设置

@@ -42,36 +42,36 @@
         // 数据库连接参数配置
         protected $config = [
             // 数据库类型
-            'type'           => '',
+            'type' => '',
             // 服务器地址
-            'hostname'       => '127.0.0.1',
+            'hostname' => '127.0.0.1',
             // 数据库名
-            'database'       => '',
+            'database' => '',
             // 用户名
-            'username'       => '',
+            'username' => '',
             // 密码
-            'password'       => '',
+            'password' => '',
             // 端口
-            'hostport'       => '',
-            'dsn'            => '',
+            'hostport' => '',
+            'dsn' => '',
             // 数据库连接参数
-            'params'         => [],
+            'params' => [],
             // 数据库编码默认采用utf8
-            'charset'        => 'utf8',
+            'charset' => 'utf8',
             // 数据库表前缀
-            'prefix'         => '',
+            'prefix' => '',
             // 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
-            'deploy'         => 0,
+            'deploy' => 0,
             // 数据库读写是否分离 主从式有效
-            'rw_separate'    => false,
+            'rw_separate' => false,
             // 读写分离后 主服务器数量
-            'master_num'     => 1,
+            'master_num' => 1,
             // 指定从服务器序号
-            'slave_no'       => '',
+            'slave_no' => '',
             // like字段自动替换为%%包裹
             'db_like_fields' => '',
             // 是否开启数据库调试
-            'debug'          => false,
+            'debug' => false,
         ];
         // 数据库表达式
         protected $exp = ['eq' => '=', 'neq' => '<>', 'gt' => '>', 'egt' => '>=', 'lt' => '<', 'elt' => '<=', 'notlike' => 'NOT LIKE', 'like' => 'LIKE', 'in' => 'IN', 'notin' => 'NOT IN', 'not in' => 'NOT IN', 'between' => 'BETWEEN', 'not between' => 'NOT BETWEEN', 'notbetween' => 'NOT BETWEEN'];
@@ -80,9 +80,9 @@
 
         // PDO连接参数
         protected $options = [
-            PDO::ATTR_CASE              => PDO::CASE_LOWER,
-            PDO::ATTR_ERRMODE           => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_ORACLE_NULLS      => PDO::NULL_NATURAL,
+            PDO::ATTR_CASE => PDO::CASE_LOWER,
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_ORACLE_NULLS => PDO::NULL_NATURAL,
             PDO::ATTR_STRINGIFY_FETCHES => false,
         ];
         // 参数绑定
@@ -123,7 +123,6 @@
                 if (empty($config)) {
                     $config = $this->config;
                 }
-
                 try {
                     if (empty($config['dsn'])) {
                         $config['dsn'] = $this->parseDsn($config);
@@ -275,8 +274,8 @@
          *
          * @access public
          *
-         * @param string $sql  带参数绑定的sql语句
-         * @param array  $bind 参数绑定列表
+         * @param string $sql 带参数绑定的sql语句
+         * @param array $bind 参数绑定列表
          *
          * @return string
          */
@@ -485,8 +484,8 @@
          *
          * @access protected
          *
-         * @param string $name  绑定参数名
-         * @param mixed  $value 绑定值
+         * @param string $name 绑定参数名
+         * @param mixed $value 绑定值
          *
          * @return void
          */
@@ -763,7 +762,7 @@
          * @access protected
          *
          * @param string $key
-         * @param mixed  $val
+         * @param mixed $val
          *
          * @return string
          */
@@ -985,8 +984,8 @@
          *
          * @access public
          *
-         * @param mixed   $data    数据
-         * @param array   $options 参数表达式
+         * @param mixed $data 数据
+         * @param array $options 参数表达式
          * @param boolean $replace 是否replace
          *
          * @return false | integer
@@ -1028,11 +1027,11 @@
          *
          * @access public
          *
-         * @param mixed $field    字段名
-         * @param mixed $pk       主键名
-         * @param mixed $dataSet  数据集
+         * @param mixed $field 字段名
+         * @param mixed $pk 主键名
+         * @param mixed $dataSet 数据集
          * @param mixed $operator 运算符
-         * @param array $options  参数表达式
+         * @param array $options 参数表达式
          **/
         public function updateFieldAll($field, $pk, $dataSet, $operator = '=', $options = [])
         {
@@ -1075,8 +1074,8 @@
          *
          * @access public
          *
-         * @param mixed   $dataSet 数据集
-         * @param array   $options 参数表达式
+         * @param mixed $dataSet 数据集
+         * @param array $options 参数表达式
          * @param boolean $replace 是否replace
          *
          * @return false | integer
@@ -1119,9 +1118,9 @@
          *
          * @access public
          *
-         * @param string $fields  要插入的数据表字段名
-         * @param string $table   要插入的数据表名
-         * @param array  $options 查询数据参数
+         * @param string $fields 要插入的数据表字段名
+         * @param string $table 要插入的数据表名
+         * @param array $options 查询数据参数
          *
          * @return false | integer
          */
@@ -1144,7 +1143,7 @@
          *
          * @access public
          *
-         * @param mixed $data    数据
+         * @param mixed $data 数据
          * @param array $options 表达式
          *
          * @return false | integer
@@ -1445,8 +1444,8 @@
                     'hostname' => isset($_config['hostname'][$m]) ? $_config['hostname'][$m] : $_config['hostname'][0],
                     'hostport' => isset($_config['hostport'][$m]) ? $_config['hostport'][$m] : $_config['hostport'][0],
                     'database' => isset($_config['database'][$m]) ? $_config['database'][$m] : $_config['database'][0],
-                    'dsn'      => isset($_config['dsn'][$m]) ? $_config['dsn'][$m] : $_config['dsn'][0],
-                    'charset'  => isset($_config['charset'][$m]) ? $_config['charset'][$m] : $_config['charset'][0],
+                    'dsn' => isset($_config['dsn'][$m]) ? $_config['dsn'][$m] : $_config['dsn'][0],
+                    'charset' => isset($_config['charset'][$m]) ? $_config['charset'][$m] : $_config['charset'][0],
                 ];
             }
             $db_config = [
@@ -1455,8 +1454,8 @@
                 'hostname' => isset($_config['hostname'][$r]) ? $_config['hostname'][$r] : $_config['hostname'][0],
                 'hostport' => isset($_config['hostport'][$r]) ? $_config['hostport'][$r] : $_config['hostport'][0],
                 'database' => isset($_config['database'][$r]) ? $_config['database'][$r] : $_config['database'][0],
-                'dsn'      => isset($_config['dsn'][$r]) ? $_config['dsn'][$r] : $_config['dsn'][0],
-                'charset'  => isset($_config['charset'][$r]) ? $_config['charset'][$r] : $_config['charset'][0],
+                'dsn' => isset($_config['dsn'][$r]) ? $_config['dsn'][$r] : $_config['dsn'][0],
+                'charset' => isset($_config['charset'][$r]) ? $_config['charset'][$r] : $_config['charset'][0],
             ];
             return $this->connect($db_config, $r, $r == $m ? false : $db_master);
         }

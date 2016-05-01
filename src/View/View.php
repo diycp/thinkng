@@ -31,23 +31,23 @@
         // 视图参数
         protected $config = [
             // 模板主题
-            'theme_on'      => false,
+            'theme_on' => false,
             // 默认主题 开启模板主题有效
             'default_theme' => 'default',
             // 视图文件路径
-            'view_path'     => '',
+            'view_path' => '',
             // 视图文件后缀
-            'view_suffix'   => '.html',
+            'view_suffix' => '.html',
             // 视图文件分隔符
-            'view_depr'     => DS,
+            'view_depr' => DS,
             // 视图层目录名
-            'view_layer'    => VIEW_LAYER,
+            'view_layer' => VIEW_LAYER,
             // 视图输出字符串替换
-            'parse_str'     => [],
+            'parse_str' => [],
             // 视图驱动命名空间
-            'namespace'     => '\\Think\\View\\Driver\\',
+            'namespace' => '\\Think\\View\\Driver\\',
             // 模板引擎配置参数
-            'template'      => [],
+            'template' => [],
         ];
 
         public function __construct(array $config = [])
@@ -80,7 +80,7 @@
          *
          * @access public
          *
-         * @param mixed $name  变量名
+         * @param mixed $name 变量名
          * @param mixed $value 变量值
          *
          * @return View
@@ -101,8 +101,8 @@
          *
          * @access public
          *
-         * @param mixed  $config 视图参数或者数组
-         * @param string $value  值
+         * @param mixed $config 视图参数或者数组
+         * @param string $value 值
          *
          * @return View
          */
@@ -129,7 +129,7 @@
          * @access public
          *
          * @param string $engine 引擎名称
-         * @param array  $config 引擎参数
+         * @param array $config 引擎参数
          *
          * @return View
          */
@@ -144,9 +144,9 @@
                 }
 
                 $config = array_merge($config, [
-                    'view_path'   => $this->config['view_path'],
+                    'view_path' => $this->config['view_path'],
                     'view_suffix' => $this->config['view_suffix'],
-                    'view_depr'   => $this->config['view_depr'],
+                    'view_depr' => $this->config['view_depr'],
                 ]);
                 $this->engine = new $class($config);
             }
@@ -183,10 +183,10 @@
          *
          * @access public
          *
-         * @param string $template      模板文件名或者内容
-         * @param array  $vars          模板输出变量
-         * @param array  $config        模板参数
-         * @param bool   $renderContent 是否渲染内容
+         * @param string $template 模板文件名或者内容
+         * @param array $vars 模板输出变量
+         * @param array $config 模板参数
+         * @param bool $renderContent 是否渲染内容
          *
          * @return string
          * @throws Exception
@@ -243,7 +243,7 @@
          * @access public
          *
          * @param string $content 内容
-         * @param array  $vars    模板输出变量
+         * @param array $vars 模板输出变量
          *
          * @return mixed
          */
@@ -318,8 +318,8 @@
          *
          * @access public
          *
-         * @param string $name  变量名
-         * @param mixed  $value 变量值
+         * @param string $name 变量名
+         * @param mixed $value 变量值
          */
         public function __set($name, $value)
         {

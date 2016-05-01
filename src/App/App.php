@@ -268,6 +268,7 @@
         {
             // 定位模块目录
             $module = (COMMON_MODULE == $module || !APP_MULTI_MODULE) ? '' : $module . DS;
+            $module = Loader::parseName($module,1);
 
             // 加载初始化文件
             if (is_file(APP_PATH . $module . 'init' . EXT)) {
@@ -286,6 +287,7 @@
                 if ($config['extra_config_list']) {
                     foreach ($config['extra_config_list'] as $name => $file) {
                         $filename = $path . $file . EXT;
+
                         Config::load($filename, is_string($name) ? $name : pathinfo($filename, PATHINFO_FILENAME));
                     }
                 }
