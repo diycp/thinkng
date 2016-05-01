@@ -109,8 +109,13 @@
          * 连接数据库方法
          *
          * @access public
+         *
+         * @param string $config
+         * @param int $linkNum
+         * @param bool $autoConnection
+         *
          * @return resource
-         * @throws \Think\Exception
+         * @throws PDOException
          */
         public function connect($config = '', $linkNum = 0, $autoConnection = false)
         {
@@ -166,13 +171,14 @@
          *
          * @access public
          *
-         * @param string  $sql    sql指令
-         * @param array   $bind   参数绑定
-         * @param boolean $fetch  不执行只是获取SQL
+         * @param string $sql sql指令
+         * @param array $bind 参数绑定
+         * @param boolean $fetch 不执行只是获取SQL
          * @param boolean $master 是否在主服务器读操作
          *
          * @return array|bool|string
-         * @throws \Think\Exception
+         * @throws DbBindParamException
+         * @throws PDOException
          */
         public function query($sql, $bind = [], $fetch = false, $master = false)
         {
@@ -215,12 +221,13 @@
          *
          * @access public
          *
-         * @param string  $sql   sql指令
-         * @param array   $bind  参数绑定
+         * @param string $sql sql指令
+         * @param array $bind 参数绑定
          * @param boolean $fetch 不执行只是获取SQL
          *
-         * @return integer
-         * @throws \Think\Exception
+         * @return int
+         * @throws DbBindParamException
+         * @throws PDOException
          */
         public function execute($sql, $bind = [], $fetch = false)
         {
@@ -296,8 +303,7 @@
          *
          * @param array $bind 要绑定的参数列表
          *
-         * @return void
-         * @throws \Think\Exception
+         * @throws DbBindParamException
          */
         protected function bindValue(array $bind = [])
         {
@@ -345,8 +351,8 @@
          * 用于非自动提交状态下面的查询提交
          *
          * @access public
-         * @return boolean
-         * @throws \Think\Exception
+         * @return bool
+         * @throws PDOException
          */
         public function commit()
         {
@@ -365,8 +371,8 @@
          * 事务回滚
          *
          * @access public
-         * @return boolean
-         * @throws \Think\Exception
+         * @return bool
+         * @throws PDOException
          */
         public function rollback()
         {
@@ -586,9 +592,11 @@
          *
          * @access protected
          *
-         * @param mixed $table
+         * @param $tables
          *
          * @return string
+         * @internal param mixed $table
+         *
          */
         protected function parseTable($tables)
         {
