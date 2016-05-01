@@ -35,9 +35,8 @@
         public static function init($config = [])
         {
             $type = isset($config['type']) ? $config['type'] : 'File';
-            $class = (!empty($config['namespace']) ? $config['namespace'] : '\\Think\\Log\\Driver\\') . ucwords($type);
+            $class = (!empty($config['namespace']) ? $config['namespace'] : '\\Think\\log\\driver\\') . ucwords($type);
             unset($config['type']);
-var_dump($class);
             self::$driver = new $class($config);
             // 记录初始化信息
             APP_DEBUG && Log::record('[ LOG ] INIT ' . $type . ': ' . var_export($config, true), 'info');
