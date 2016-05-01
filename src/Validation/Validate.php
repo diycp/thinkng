@@ -11,6 +11,9 @@
 
     namespace Think\Validation;
 
+    use Think\Hook\Hook;
+    use Think\ClassLoader\Loader;
+
     class Validate
     {
         // 实例

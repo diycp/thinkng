@@ -216,7 +216,7 @@
         public static function path($name = '', $default = null, $filter = null, $merge = false)
         {
             if (!empty($_SERVER['PATH_INFO'])) {
-                $depr = \Think\Config::get('pathinfo_depr');
+                $depr = \Think\Config\Config::get('pathinfo_depr');
                 $input = explode($depr, trim($_SERVER['PATH_INFO'], $depr));
                 return self::data($input, $name, $default, $filter, $merge);
             } else {
@@ -434,7 +434,7 @@
         {
             if (is_null(static::$filters)) {
                 // 从配置项中读取
-                $filters = \Think\Config::get('default_filter');
+                $filters = \Think\Config\Config::get('default_filter');
                 static::$filters = empty($filters) ? [] : (is_array($filters) ? $filters : explode(',', $filters));
             }
             return static::$filters;

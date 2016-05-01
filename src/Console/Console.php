@@ -45,11 +45,11 @@
         private $defaultCommand;
 
         private static $defaultCommands = [
-            "Think\\console\\command\\Help",
-            "Think\\console\\command\\Lists",
-            "Think\\console\\command\\Build",
-            "Think\\console\\command\\make\\Controller",
-            "Think\\console\\command\\make\\Model",
+            "Think\\Console\\Command\\Help",
+            "Think\\Console\\Command\\Lists",
+            "Think\\Console\\Command\\Build",
+            "Think\\Console\\Command\\Make\\Controller",
+            "Think\\Console\\Command\\Make\\Model",
         ];
 
         public function __construct($name = 'UNKNOWN', $version = 'UNKNOWN')

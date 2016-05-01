@@ -45,7 +45,7 @@
             // 视图输出字符串替换
             'parse_str'     => [],
             // 视图驱动命名空间
-            'namespace'     => '\\Think\\view\\driver\\',
+            'namespace'     => '\\Think\\View\\Driver\\',
             // 模板引擎配置参数
             'template'      => [],
         ];

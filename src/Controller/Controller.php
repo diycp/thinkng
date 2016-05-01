@@ -13,6 +13,7 @@
 
     use Think\View\View;
     use Think\Config\Config;
+    use Think\ClassLoader\Loader;
 
     class Controller
     {

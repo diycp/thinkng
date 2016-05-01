@@ -11,6 +11,10 @@
 
     namespace Think\Routing;
 
+    use Think\Config\Config;
+    use Think\Log\Log;
+    use Think\Hook\Hook;
+
     class Route
     {
         // 路由规则

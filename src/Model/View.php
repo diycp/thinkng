@@ -11,9 +11,9 @@
 
     namespace Think\Model;
 
-    \Think\Loader::import('model/View', TRAIT_PATH, EXT);
+    use \Traits\Model\ViewTrait;
 
     class View extends Model
     {
-        use \traits\model\View;
+        use \Traits\Model\ViewTrait;
     }

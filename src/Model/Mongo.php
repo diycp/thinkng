@@ -12,8 +12,7 @@
 
     use Think\Intl\Lang;
     use Think\ClassLoader\Loader;
-
-    Loader::import('modle/Adv', TRAIT_PATH, EXT);
+    use \Traits\Model\AdvTrait;
 
     /**
      * MongoModel模型类
@@ -21,7 +20,7 @@
      */
     class Mongo extends Model
     {
-        use \traits\model\Adv;
+        use \Traits\Model\AdvTrait;
 
         // 主键类型
         const TYPE_OBJECT = 1;

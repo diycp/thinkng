@@ -34,8 +34,8 @@
                 $this->_initialize();
             }
 
-            //导入类库
-            \Think\Loader::import('vendor.Hprose.HproseHttpServer');
+            //导入类库  此处 应该更改为composer安装方式的包
+            \Think\ClassLoader\Loader::import('vendor.Hprose.HproseHttpServer');
             //实例化HproseHttpServer
             $server = new \HproseHttpServer();
             if ($this->allowMethodList) {
