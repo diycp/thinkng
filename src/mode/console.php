@@ -16,9 +16,9 @@
 
         // 命名空间
         'namespace' => [
-            'think'       => LIB_PATH . 'think' . DS,
-            'behavior'    => LIB_PATH . 'behavior' . DS,
-            'traits'      => LIB_PATH . 'traits' . DS,
+            'Think'       => LIB_PATH . DS,
+            'Behavior'    => LIB_PATH . 'Behavior' . DS,
+            'Traits'      => LIB_PATH . 'Traits' . DS,
             APP_NAMESPACE => APP_PATH,
         ],
         // 别名定义

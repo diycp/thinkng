@@ -16,6 +16,10 @@
      * 支持XML标签和普通标签的模板解析
      * 编译型模板引擎 支持动态缓存
      */
+
+    use Think\Cache\Cache;
+    use Think\Exception\Exception;
+
     class Template
     {
         // 模板变量
@@ -47,7 +51,7 @@
             'cache_id'           => '', // 模板缓存ID
             'tpl_replace_string' => [],
             'tpl_var_identify'   => 'array', // .语法变量识别，array|object|'', 为空时自动识别
-            'namespace'          => '\\Think\\template\\driver\\',
+            'namespace'          => '\\Think\\Template\\Driver\\',
         ];
 
         private $literal = [];
@@ -447,8 +451,7 @@
          *
          * @param string $content 要解析的模板内容
          *
-         * @return void
-         * @throws \Think\Exception
+         * @throws Exception
          */
         private function parsePhp(&$content)
         {
@@ -726,7 +729,7 @@
                 $className = $tagLib;
                 $tagLib = substr($tagLib, strrpos($tagLib, '\\') + 1);
             } else {
-                $className = '\\Think\\template\\taglib\\' . ucwords($tagLib);
+                $className = '\\Think\\Template\\Taglib\\' . ucwords($tagLib);
             }
             $tLib = new $className($this);
             $tLib->parseTag($content, $hide ? '' : $tagLib);
@@ -1115,8 +1118,8 @@
          * @access private
          *
          * @param  string $template 文件名
-         *
-         * @return string|false
+         * @return false|string
+         * @throws Exception
          */
         private function parseTemplateFile($template)
         {

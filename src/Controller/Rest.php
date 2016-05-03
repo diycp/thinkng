@@ -11,7 +11,8 @@
 
     namespace Think\Controller;
 
-    use Think\Response;
+    use Think\Request\Response;
+    use Think\Exception\Exception;
 
     abstract class Rest
     {
@@ -61,10 +62,9 @@
          * @access public
          *
          * @param string $method 方法名
-         * @param array  $args   参数
-         *
+         * @param array $args 参数
          * @return mixed
-         * @throws \Think\Exception
+         * @throws Exception
          */
         public function _empty($method, $args)
         {
@@ -80,7 +80,7 @@
                 return $this->$fun();
             } else {
                 // 抛出异常
-                throw new \Exception('error action :' . ACTION_NAME);
+                throw new Exception('error action :' . ACTION_NAME);
             }
         }
 

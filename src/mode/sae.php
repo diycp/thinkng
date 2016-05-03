@@ -15,9 +15,9 @@
     return [
         // 命名空间
         'namespace' => [
-            'think'       => LIB_PATH . 'think' . DS,
-            'behavior'    => LIB_PATH . 'behavior' . DS,
-            'traits'      => LIB_PATH . 'traits' . DS,
+            'Think'       => LIB_PATH . DS,
+            'Behavior'    => LIB_PATH . 'Behavior' . DS,
+            'Traits'      => LIB_PATH . 'Traits' . DS,
             APP_NAMESPACE => APP_PATH,
         ],
 
@@ -91,14 +91,11 @@
             'Think\Template'             => CORE_PATH . 'Template' . EXT,
             'Think\Url'                  => CORE_PATH . 'Url' . EXT,
             'Think\View'                 => CORE_PATH . 'View' . EXT,
-            'Think\Db\Driver'            => CORE_PATH . 'db' . DS . 'Driver' . EXT,
-            'Think\View\Driver\Think'    => CORE_PATH . 'view' . DS . 'driver' . DS . 'Think' . EXT,
-            'Think\Template\Driver\File' => CORE_PATH . 'template' . DS . 'driver' . DS . 'File' . EXT,
-            'Think\Log\Driver\File'      => CORE_PATH . 'log' . DS . 'driver' . DS . 'File' . EXT,
-            'Think\Cache\Driver\File'    => CORE_PATH . 'cache' . DS . 'driver' . DS . 'File' . EXT,
-            'Think\Log\Driver\Sae'       => CORE_PATH . 'log' . DS . 'driver' . DS . 'Sae' . EXT,
-            'Think\Cache\Driver\Sae'     => CORE_PATH . 'cache' . DS . 'driver' . DS . 'Sae' . EXT,
-            'Think\Template\Driver\Sae'  => CORE_PATH . 'template' . DS . 'driver' . DS . 'Sae' . EXT,
+            'Think\Db\Driver'            => CORE_PATH . 'Db' . DS . 'Driver' . EXT,
+            'Think\View\Driver\Think'    => CORE_PATH . 'View' . DS . 'Driver' . DS . 'Think' . EXT,
+            'Think\Template\Driver\File' => CORE_PATH . 'Template' . DS . 'Driver' . DS . 'File' . EXT,
+            'Think\Log\Driver\File'      => CORE_PATH . 'Log' . DS . 'Driver' . DS . 'File' . EXT,
+            'Think\Cache\Driver\File'    => CORE_PATH . 'Cache' . DS . 'Driver' . DS . 'File' . EXT,
         ],
 
     ];

@@ -16,6 +16,7 @@
     use Think\Config\Config;
     use Think\Db\Db;
     use Think\Exception\Exception;
+    use Think\Hook\Hook;
 
     class Model
     {
@@ -1036,7 +1037,7 @@
         {
             // 如果没有传值默认取POST数据
             if (empty($data)) {
-                $data = \Think\Input::post();
+                $data = \Think\Input\Input::post();
             } elseif (is_object($data)) {
                 $data = get_object_vars($data);
             }

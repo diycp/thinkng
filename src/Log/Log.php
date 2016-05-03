@@ -12,6 +12,7 @@
     namespace Think\Log;
 
     use Think\Config\Config;
+    use Think\Hook\Hook;
 
     class Log
     {
@@ -35,7 +36,7 @@
         public static function init($config = [])
         {
             $type = isset($config['type']) ? $config['type'] : 'File';
-            $class = (!empty($config['namespace']) ? $config['namespace'] : '\\Think\\log\\driver\\') . ucwords($type);
+            $class = (!empty($config['namespace']) ? $config['namespace'] : '\\Think\\Log\\Driver\\') . ucwords($type);
             unset($config['type']);
             self::$driver = new $class($config);
             // 记录初始化信息
@@ -46,7 +47,7 @@
         public static function alarm($config = [])
         {
             $type = isset($config['type']) ? $config['type'] : 'Email';
-            $class = (!empty($config['namespace']) ? $config['namespace'] : '\\Think\\log\\alarm\\') . ucwords($type);
+            $class = (!empty($config['namespace']) ? $config['namespace'] : '\\Think\\Log\\Alarm\\') . ucwords($type);
             unset($config['type']);
             self::$alarm = new $class($config['alarm']);
             // 记录初始化信息
@@ -144,7 +145,7 @@
         {
             if (in_array($method, self::$type)) {
                 array_push($args, $method);
-                return call_user_func_array('\\Think\\Log::record', $args);
+                return call_user_func_array('\\Think\\Log\\Log::record', $args);
             }
         }
 

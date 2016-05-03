@@ -29,7 +29,7 @@
             }
 
             //导入类库
-            \Think\Loader::import('vendor.jsonrpc.jsonRPCServer');
+            \Think\Classloader\Loader::import('vendor.jsonrpc.jsonRPCServer');
             // 启动server
             \jsonRPCServer::handle($this);
         }

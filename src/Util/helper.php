@@ -180,10 +180,10 @@
     /**
      * 抛出异常处理
      *
-     * @param string  $msg  异常消息
+     * @param string $msg 异常消息
      * @param integer $code 异常代码 默认为0
      *
-     * @throws \Think\Exception
+     * @throws \Think\Exception\Exception
      */
     function E($msg, $code = 0)
     {

@@ -40,8 +40,7 @@
          *
          * @param array $config
          *
-         * @return void
-         * @throws \Think\Exception
+         * @throws \Think\Exception\Exception
          */
         public static function init(array $config = [])
         {
@@ -94,11 +93,11 @@
             }
             if (!empty($config['type'])) {
                 // 读取session驱动
-                $class = (!empty($config['namespace']) ? $config['namespace'] : '\\Think\\session\\driver\\') . ucwords($config['type']);
+                $class = (!empty($config['namespace']) ? $config['namespace'] : '\\Think\\Session\\Driver\\') . ucwords($config['type']);
 
                 // 检查驱动类
                 if (!class_exists($class) || !session_set_save_handler(new $class($config))) {
-                    throw new \Think\Exception('error session handler', 11700);
+                    throw new \Think\Exception\Exception('error session handler', 11700);
                 }
             }
             if ($isDoStart) {

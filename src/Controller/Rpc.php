@@ -32,7 +32,7 @@
             }
 
             //导入类库
-            \Think\Loader::import('vendor.phprpc.phprpc_server');
+            \Think\Classloader\Loader::import('vendor.phprpc.phprpc_server');
             //实例化phprpc
             $server = new \PHPRPC_Server();
             if ($this->allowMethodList) {

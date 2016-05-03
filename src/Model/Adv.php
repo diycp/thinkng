@@ -11,11 +11,11 @@
 
     namespace Think\Model;
 
-    \Think\Loader::import('model/Adv', TRAIT_PATH, EXT);
-    \Think\Loader::import('model/Transaction', TRAIT_PATH, EXT);
+    use \Traits\Model\AdvTrait;
+    use \Traits\Model\TransactionTrait;
 
     class Adv extends Model
     {
-        use \traits\model\Adv;
-        use \traits\model\Transaction;
+        use \Traits\Model\AdvTrait;
+        use \Traits\Model\TransactionTrait;
     }

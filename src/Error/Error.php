@@ -11,9 +11,12 @@
 
     namespace Think\Error;
 
+    use Think\Exception\Exception;
     use Think\Exception\ErrorException;
     use Think\Log\Log;
     use Think\Config\Config;
+    use Think\Hook\Hook;
+    use Think\Request\Response;
 
     class Error
     {
@@ -90,12 +93,14 @@
         /**
          * Error Handler
          *
-         * @param  integer $errno   错误编号
-         * @param  integer $errstr  详细错误信息
-         * @param  string  $errfile 出错的文件
+         * @param  integer $errno 错误编号
+         * @param  integer $errstr 详细错误信息
+         * @param  string $errfile 出错的文件
          * @param  integer $errline 出错行号
          *
-         * @return bool  true-禁止往下传播已处理过的异常
+         * @param array $errcontext
+         * @return bool true-禁止往下传播已处理过的异常
+         * @throws ErrorException
          */
         public static function appError($errno, $errstr, $errfile = null, $errline = 0, array $errcontext = [])
         {
