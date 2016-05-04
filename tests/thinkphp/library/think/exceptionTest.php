@@ -9,44 +9,44 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-    /**
-     * exception类测试
-     *
-     * @author    Haotong Lin <lofanmi@gmail.com>
-     */
+/**
+ * exception类测试
+ *
+ * @author    Haotong Lin <lofanmi@gmail.com>
+ */
 
-    namespace tests\thinkphp\library\think;
+namespace tests\thinkphp\library\think;
 
-    use ReflectionMethod;
-    use think\Exception as ThinkException;
+use ReflectionMethod;
+use think\Exception as ThinkException;
 
-    class MyException extends ThinkException
+class MyException extends ThinkException
+{
+
+}
+
+class exceptionTest extends \PHPUnit_Framework_TestCase
+{
+    public function testGetHttpStatus()
     {
-
-    }
-
-    class exceptionTest extends \PHPUnit_Framework_TestCase
-    {
-        public function testGetHttpStatus()
-        {
-            try {
-                throw new ThinkException("Error Processing Request", 1);
-            } catch (ThinkException $e) {
-                $this->assertEquals(500, $e->getHttpStatus());
-            }
-        }
-
-        public function testDebugData()
-        {
-            $data = ['a' => 'b', 'c' => 'd'];
-            try {
-                $e = new MyException("Error Processing Request", 1);
-                $method = new ReflectionMethod($e, 'setData');
-                $method->setAccessible(true);
-                $method->invokeArgs($e, ['test', $data]);
-                throw $e;
-            } catch (MyException $e) {
-                $this->assertEquals(['test' => $data], $e->getData());
-            }
+        try {
+            throw new ThinkException("Error Processing Request", 1);
+        } catch (ThinkException $e) {
+            $this->assertEquals(500, $e->getHttpStatus());
         }
     }
+
+    public function testDebugData()
+    {
+        $data = ['a' => 'b', 'c' => 'd'];
+        try {
+            $e = new MyException("Error Processing Request", 1);
+            $method = new ReflectionMethod($e, 'setData');
+            $method->setAccessible(true);
+            $method->invokeArgs($e, ['test', $data]);
+            throw $e;
+        } catch (MyException $e) {
+            $this->assertEquals(['test' => $data], $e->getData());
+        }
+    }
+}

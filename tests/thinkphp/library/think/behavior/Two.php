@@ -1,10 +1,10 @@
 <?php
-    namespace tests\thinkphp\library\think\behavior;
+namespace tests\thinkphp\library\think\behavior;
 
-    class Two
+class Two
+{
+    public function run(&$data)
     {
-        public function run(&$data)
-        {
-            $data['id'] = 2;
-        }
+        $data['id'] = 2;
     }
+}

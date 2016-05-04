@@ -10,16 +10,16 @@
 // +----------------------------------------------------------------------
 
 // 测试入口文件
-    $_SERVER['REQUEST_METHOD'] = 'GET';
+$_SERVER['REQUEST_METHOD'] = 'GET';
 // 定义项目测试基础路径
-    define('TEST_PATH', __DIR__ . '/');
+define('TEST_PATH', __DIR__ . '/');
 // 定义项目路径
-    define('APP_PATH', __DIR__ . '/webapp/');
+define('APP_PATH', __DIR__ . '/webapp/');
 // 开启调试模式
-    define('APP_DEBUG', true);
+define('APP_DEBUG', true);
 // 关闭应用自动执行
-    define('APP_AUTO_RUN', false);
-    include __DIR__ . '/../vendor/autoload.php';
+define('APP_AUTO_RUN', false);
+include __DIR__ . '/../vendor/autoload.php';
 // 加载框架引导文件
-    require __DIR__ . '/../src/think.php';
-    Think\ClassLoader\Loader::addNamespace('tests', TEST_PATH);
+require __DIR__ . '/../src/think.php';
+Think\ClassLoader\Loader::addNamespace('tests', TEST_PATH);

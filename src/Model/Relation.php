@@ -9,11 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-    namespace Think\Model;
+namespace Think\Model;
 
+class Relation extends Model
+{
     use \Traits\Model\RelationTrait;
-
-    class Relation extends Model
-    {
-        use \Traits\Model\RelationTrait;
-    }
+}

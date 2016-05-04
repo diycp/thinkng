@@ -1,25 +1,29 @@
 {
-    "name": "thinkphp/thinkphp",
-    "description": "the new thinkphp framework",
-    "type": "project",
-    "keywords": ["framework", "thinkphp", "ORM"],
-    "homepage": "http://thinkphp.cn/",
-    "license": "Apache2",
-    "authors": [
-        {
-            "name": "liu21st",
-            "email": "liu21st@gmail.com"
-        }
-    ],
-    "require": {
-        "php": "~5.4"
-    },
-    "require-dev": {
-        "johnkary/phpunit-speedtrap": "^1.0",
-        "mikey179/vfsStream": "~1.6",
-        "phploc/phploc": "*",
-        "phpunit/phpunit": "4.8.*",
-        "sebastian/phpcpd": "*",
-        "squizlabs/php_codesniffer": "2.*"
+  "name": "thinkphp/thinkphp",
+  "description": "the new thinkphp framework",
+  "type": "project",
+  "keywords": [
+    "framework",
+    "thinkphp",
+    "ORM"
+  ],
+  "homepage": "http://thinkphp.cn/",
+  "license": "Apache2",
+  "authors": [
+    {
+      "name": "liu21st",
+      "email": "liu21st@gmail.com"
     }
+  ],
+  "require": {
+    "php": "~5.4"
+  },
+  "require-dev": {
+    "johnkary/phpunit-speedtrap": "^1.0",
+    "mikey179/vfsStream": "~1.6",
+    "phploc/phploc": "*",
+    "phpunit/phpunit": "4.8.*",
+    "sebastian/phpcpd": "*",
+    "squizlabs/php_codesniffer": "2.*"
+  }
 }

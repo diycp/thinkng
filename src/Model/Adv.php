@@ -9,13 +9,10 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-    namespace Think\Model;
+namespace Think\Model;
 
+class Adv extends Model
+{
     use \Traits\Model\AdvTrait;
     use \Traits\Model\TransactionTrait;
-
-    class Adv extends Model
-    {
-        use \Traits\Model\AdvTrait;
-        use \Traits\Model\TransactionTrait;
-    }
+}

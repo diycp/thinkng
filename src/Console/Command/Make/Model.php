@@ -9,18 +9,18 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-    namespace Think\Console\Command\Make;
+namespace Think\Console\Command\Make;
 
 
-    use Think\Console\Command\Command;
+use Think\Console\Command\Command;
 
 
-    class Model extends Command
+class Model extends Command
+{
+
+    public function __construct()
     {
-
-        public function __construct()
-        {
-            parent::__construct("make:model");
-        }
-
+        parent::__construct("make:model");
     }
+
+}

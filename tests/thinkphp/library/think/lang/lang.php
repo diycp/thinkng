@@ -1,4 +1,4 @@
 <?php
-    return [
-        'load' => '加载',
-    ];
+return [
+    'load' => '加载',
+];

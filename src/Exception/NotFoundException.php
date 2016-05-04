@@ -9,20 +9,18 @@
 // | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://zjzit.cn>
 // +----------------------------------------------------------------------
 
-    namespace Think\Exception;
+namespace Think\Exception;
 
-    use Think\Exception\Exception;
-
+/**
+ * Database相关异常处理类
+ */
+class NotFoundException extends Exception
+{
     /**
-     * Database相关异常处理类
+     * 系统异常后发送给客户端的HTTP Status
+     *
+     * @var integer
      */
-    class NotFoundException extends Exception
-    {
-        /**
-         * 系统异常后发送给客户端的HTTP Status
-         *
-         * @var integer
-         */
-        protected $httpStatus = 404;
+    protected $httpStatus = 404;
 
-    }
+}

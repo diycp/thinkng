@@ -1,40 +1,44 @@
 {
-    "name": "topthink/thinkng",
-    "description": "The next generation thinkphp framework",
-    "type": "library",
-    "keywords": ["framework", "thinkphp", "ORM"],
-    "homepage": "http://thinkphp.cn/",
-    "license": "Apache-2.0",
-    "authors": [
-        {
-            "name": "liu21st",
-            "email": "liu21st@gmail.com"
-        },
-        {
-            "name": "tao",
-            "email": "taosikai@yeah.net"
-        }
-    ],
-    "require": {
-        "php": ">=5.4.0"
+  "name": "topthink/thinkng",
+  "description": "The next generation thinkphp framework",
+  "type": "library",
+  "keywords": [
+    "framework",
+    "thinkphp",
+    "ORM"
+  ],
+  "homepage": "http://thinkphp.cn/",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "liu21st",
+      "email": "liu21st@gmail.com"
     },
-    "require-dev": {
-        "johnkary/phpunit-speedtrap": "^1.0",
-        "mikey179/vfsStream": "~1.6",
-        "phploc/phploc": "*",
-        "phpunit/phpunit": "4.8.*",
-        "sebastian/phpcpd": "*",
-        "squizlabs/php_codesniffer": "2.*",
-        "symfony/finder": "~3.0",
-        "slince/console": "*@dev"
+    {
+      "name": "tao",
+      "email": "taosikai@yeah.net"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "require-dev": {
+    "johnkary/phpunit-speedtrap": "^1.0",
+    "mikey179/vfsStream": "~1.6",
+    "phploc/phploc": "*",
+    "phpunit/phpunit": "4.8.*",
+    "sebastian/phpcpd": "*",
+    "squizlabs/php_codesniffer": "2.*",
+    "symfony/finder": "~3.0",
+    "slince/console": "*@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "Think\\": "./src"
     },
-    "autoload": {
-        "psr-4": {
-            "Think\\" : "./src"
-        },
-        "files": [
-             "./config/bootstrap.php"
-        ]
-    },
-    "minimum-stability": "dev"
+    "files": [
+      "./config/bootstrap.php"
+    ]
+  },
+  "minimum-stability": "dev"
 }
