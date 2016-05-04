@@ -9,64 +9,64 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-    namespace Think\Cache;
+namespace Think\Cache;
 
-    use Think\Config\Config;
-    use Think\Log\Log;
+use Think\Config\Config;
+use Think\Log\Log;
+
+/**
+ * Class Cache
+ *
+ * @package think
+ * @method static mixed get() get(string $name)
+ * @method static bool set() set(string $name, mixed $value, mixed $expire = null)
+ * @method static bool rm() rm(string $name, bool $expire = false)
+ * @method static bool clear() clear()
+ */
+class Cache
+{
+    protected static $instance = [];
+    public static $readTimes = 0;
+    public static $writeTimes = 0;
 
     /**
-     * Class Cache
+     * 操作句柄
      *
-     * @package think
-     * @method static mixed get() get(string $name)
-     * @method static bool set() set(string $name, mixed $value, mixed $expire = null)
-     * @method static bool rm() rm(string $name, bool $expire = false)
-     * @method static bool clear() clear()
+     * @var object
+     * @access protected
      */
-    class Cache
+    protected static $handler = null;
+
+    /**
+     * 连接缓存
+     *
+     * @access public
+     *
+     * @param array $options 配置数组
+     *
+     * @return object
+     */
+    public static function connect(array $options = [])
     {
-        protected static $instance = [];
-        public static $readTimes = 0;
-        public static $writeTimes = 0;
-
-        /**
-         * 操作句柄
-         *
-         * @var object
-         * @access protected
-         */
-        protected static $handler = null;
-
-        /**
-         * 连接缓存
-         *
-         * @access public
-         *
-         * @param array $options 配置数组
-         *
-         * @return object
-         */
-        public static function connect(array $options = [])
-        {
-            $md5 = md5(serialize($options));
-            if (!isset(self::$instance[$md5])) {
-                $type = !empty($options['type']) ? $options['type'] : 'File';
-                $class = (!empty($options['namespace']) ? $options['namespace'] : '\\Think\\Cache\\Driver\\') . ucwords($type);
-                unset($options['type']);
-                self::$instance[$md5] = new $class($options);
-                // 记录初始化信息
-                APP_DEBUG && Log::record('[ CACHE ] INIT ' . $type . ':' . var_export($options, true), 'info');
-            }
-            self::$handler = self::$instance[$md5];
-            return self::$handler;
+        $md5 = md5(serialize($options));
+        if (!isset(self::$instance[$md5])) {
+            $type = !empty($options['type']) ? $options['type'] : 'File';
+            $class = (!empty($options['namespace']) ? $options['namespace'] : '\\Think\\Cache\\Driver\\') . ucwords($type);
+            unset($options['type']);
+            self::$instance[$md5] = new $class($options);
+            // 记录初始化信息
+            APP_DEBUG && Log::record('[ CACHE ] INIT ' . $type . ':' . var_export($options, true), 'info');
         }
-
-        public static function __callStatic($method, $params)
-        {
-            if (is_null(self::$handler)) {
-                // 自动初始化缓存
-                self::connect(Config::get('cache'));
-            }
-            return call_user_func_array([self::$handler, $method], $params);
-        }
+        self::$handler = self::$instance[$md5];
+        return self::$handler;
     }
+
+    public static function __callStatic($method, $params)
+    {
+        if (is_null(self::$handler)) {
+            // 自动初始化缓存
+            self::connect(Config::get('cache'));
+        }
+        return call_user_func_array([self::$handler, $method], $params);
+    }
+}

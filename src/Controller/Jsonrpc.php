@@ -8,43 +8,43 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-    namespace Think\Controller;
+namespace Think\Controller;
+
+/**
+ * ThinkPHP JsonRPC控制器类
+ */
+abstract class Jsonrpc
+{
 
     /**
-     * ThinkPHP JsonRPC控制器类
+     * 架构函数
+     *
+     * @access public
      */
-    abstract class Jsonrpc
+    public function __construct()
     {
-
-        /**
-         * 架构函数
-         *
-         * @access public
-         */
-        public function __construct()
-        {
-            //控制器初始化
-            if (method_exists($this, '_initialize')) {
-                $this->_initialize();
-            }
-
-            //导入类库
-            \Think\Classloader\Loader::import('vendor.jsonrpc.jsonRPCServer');
-            // 启动server
-            \jsonRPCServer::handle($this);
+        //控制器初始化
+        if (method_exists($this, '_initialize')) {
+            $this->_initialize();
         }
 
-        /**
-         * 魔术方法 有不存在的操作的时候执行
-         *
-         * @access public
-         *
-         * @param string $method 方法名
-         * @param array  $args   参数
-         *
-         * @return mixed
-         */
-        public function __call($method, $args)
-        {
-        }
+        //导入类库
+        \Think\Classloader\Loader::import('vendor.jsonrpc.jsonRPCServer');
+        // 启动server
+        \jsonRPCServer::handle($this);
     }
+
+    /**
+     * 魔术方法 有不存在的操作的时候执行
+     *
+     * @access public
+     *
+     * @param string $method 方法名
+     * @param array $args 参数
+     *
+     * @return mixed
+     */
+    public function __call($method, $args)
+    {
+    }
+}

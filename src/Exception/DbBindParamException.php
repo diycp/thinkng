@@ -9,18 +9,16 @@
 // | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://zjzit.cn>
 // +----------------------------------------------------------------------
 
-    namespace Think\Exception;
+namespace Think\Exception;
 
-    use Think\Exception\DbException;
-
-    /**
-     * PDO参数绑定异常
-     */
-    class DbBindParamException extends DbException
+/**
+ * PDO参数绑定异常
+ */
+class DbBindParamException extends DbException
+{
+    public function __construct($message, $config, $sql, $bind, $code = 10502)
     {
-        public function __construct($message, $config, $sql, $bind, $code = 10502)
-        {
-            $this->setData('Bind Param', $bind);
-            parent::__construct($message, $config, $sql, $code);
-        }
+        $this->setData('Bind Param', $bind);
+        parent::__construct($message, $config, $sql, $code);
     }
+}

@@ -9,35 +9,35 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-    namespace Think\Process\Exception;
+namespace Think\Process\Exception;
 
 
-    use Think\Process;
+use Think\Process;
 
-    class Failed extends \RuntimeException
+class Failed extends \RuntimeException
+{
+
+    private $process;
+
+    public function __construct(Process $process)
     {
-
-        private $process;
-
-        public function __construct(Process $process)
-        {
-            if ($process->isSuccessful()) {
-                throw new \InvalidArgumentException('Expected a failed process, but the given process was successful.');
-            }
-
-            $error = sprintf('The command "%s" failed.' . "\nExit Code: %s(%s)", $process->getCommandLine(), $process->getExitCode(), $process->getExitCodeText());
-
-            if (!$process->isOutputDisabled()) {
-                $error .= sprintf("\n\nOutput:\n================\n%s\n\nError Output:\n================\n%s", $process->getOutput(), $process->getErrorOutput());
-            }
-
-            parent::__construct($error);
-
-            $this->process = $process;
+        if ($process->isSuccessful()) {
+            throw new \InvalidArgumentException('Expected a failed process, but the given process was successful.');
         }
 
-        public function getProcess()
-        {
-            return $this->process;
+        $error = sprintf('The command "%s" failed.' . "\nExit Code: %s(%s)", $process->getCommandLine(), $process->getExitCode(), $process->getExitCodeText());
+
+        if (!$process->isOutputDisabled()) {
+            $error .= sprintf("\n\nOutput:\n================\n%s\n\nError Output:\n================\n%s", $process->getOutput(), $process->getErrorOutput());
         }
+
+        parent::__construct($error);
+
+        $this->process = $process;
     }
+
+    public function getProcess()
+    {
+        return $this->process;
+    }
+}

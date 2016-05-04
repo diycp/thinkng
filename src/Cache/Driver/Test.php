@@ -9,70 +9,70 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-    namespace Think\Cache\Driver;
+namespace Think\Cache\Driver;
 
-    use Think\Cache;
+use Think\Cache;
+
+/**
+ * 测试缓存类
+ *
+ * @author    liu21st <liu21st@gmail.com>
+ */
+class Test
+{
 
     /**
-     * 测试缓存类
+     * 读取缓存
      *
-     * @author    liu21st <liu21st@gmail.com>
+     * @access public
+     *
+     * @param string $name 缓存变量名
+     *
+     * @return mixed
      */
-    class Test
+    public function get($name)
     {
-
-        /**
-         * 读取缓存
-         *
-         * @access public
-         *
-         * @param string $name 缓存变量名
-         *
-         * @return mixed
-         */
-        public function get($name)
-        {
-            return false;
-        }
-
-        /**
-         * 写入缓存
-         *
-         * @access public
-         *
-         * @param string $name   缓存变量名
-         * @param mixed  $value  存储数据
-         * @param int    $expire 有效时间 0为永久
-         *
-         * @return boolean
-         */
-        public function set($name, $value, $expire = null)
-        {
-            return true;
-        }
-
-        /**
-         * 删除缓存
-         *
-         * @access public
-         *
-         * @param string $name 缓存变量名
-         *
-         * @return boolean
-         */
-        public function rm($name)
-        {
-            return true;
-        }
-
-        /**
-         * 清除缓存
-         *
-         * @access public
-         * @return boolean
-         */
-        public function clear()
-        {
-            return true;
-        }
+        return false;
     }
+
+    /**
+     * 写入缓存
+     *
+     * @access public
+     *
+     * @param string $name 缓存变量名
+     * @param mixed $value 存储数据
+     * @param int $expire 有效时间 0为永久
+     *
+     * @return boolean
+     */
+    public function set($name, $value, $expire = null)
+    {
+        return true;
+    }
+
+    /**
+     * 删除缓存
+     *
+     * @access public
+     *
+     * @param string $name 缓存变量名
+     *
+     * @return boolean
+     */
+    public function rm($name)
+    {
+        return true;
+    }
+
+    /**
+     * 清除缓存
+     *
+     * @access public
+     * @return boolean
+     */
+    public function clear()
+    {
+        return true;
+    }
+}

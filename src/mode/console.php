@@ -9,34 +9,34 @@
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-    /**
-     * ThinkPHP CLI模式定义
-     */
-    return [
+/**
+ * ThinkPHP CLI模式定义
+ */
+return [
 
-        // 命名空间
-        'namespace' => [
-            'Think'       => LIB_PATH . DS,
-            'Behavior'    => LIB_PATH . 'Behavior' . DS,
-            'Traits'      => LIB_PATH . 'Traits' . DS,
-            APP_NAMESPACE => APP_PATH,
+    // 命名空间
+    'namespace' => [
+        'Think'       => LIB_PATH . DS,
+        'Behavior'    => LIB_PATH . 'Behavior' . DS,
+        'Traits'      => LIB_PATH . 'Traits' . DS,
+        APP_NAMESPACE => APP_PATH,
+    ],
+    // 别名定义
+    'alias'     => [
+        'Think\Error' => MODE_PATH . 'console/Error' . EXT,
+    ],
+    // 配置文件
+    'config'    => [
+        'log'   => [
+            'type' => 'File', // 支持 file socket trace sae
+            'path' => LOG_PATH,
         ],
-        // 别名定义
-        'alias'     => [
-            'Think\Error' => MODE_PATH . 'console/Error' . EXT,
+        'cache' => [
+            'type'   => 'File',
+            'path'   => CACHE_PATH,
+            'prefix' => '',
+            'expire' => 0,
         ],
-        // 配置文件
-        'config'    => [
-            'log'   => [
-                'type' => 'File', // 支持 file socket trace sae
-                'path' => LOG_PATH,
-            ],
-            'cache' => [
-                'type'   => 'File',
-                'path'   => CACHE_PATH,
-                'prefix' => '',
-                'expire' => 0,
-            ],
-        ],
+    ],
 
-    ];
+];

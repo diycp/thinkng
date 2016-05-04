@@ -9,26 +9,26 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-    /**
-     * Xml配置测试
-     *
-     * @author    7IN0SAN9 <me@7in0.me>
-     */
+/**
+ * Xml配置测试
+ *
+ * @author    7IN0SAN9 <me@7in0.me>
+ */
 
-    namespace tests\thinkphp\library\think\config\driver;
+namespace tests\thinkphp\library\think\config\driver;
 
-    use think\config;
+use think\config;
 
-    class xmlTest extends \PHPUnit_Framework_TestCase
+class xmlTest extends \PHPUnit_Framework_TestCase
+{
+    public function testParse()
     {
-        public function testParse()
-        {
-            Config::parse('<?xml version="1.0"?><document><xmlstring>1</xmlstring></document>', 'xml');
-            $this->assertEquals(1, Config::get('xmlstring'));
-            Config::reset();
-            Config::parse(__DIR__ . '/fixtures/config.xml');
-            $this->assertTrue(Config::has('xmlfile.istrue'));
-            $this->assertEquals(1, Config::get('xmlfile.istrue'));
-            Config::reset();
-        }
+        Config::parse('<?xml version="1.0"?><document><xmlstring>1</xmlstring></document>', 'xml');
+        $this->assertEquals(1, Config::get('xmlstring'));
+        Config::reset();
+        Config::parse(__DIR__ . '/fixtures/config.xml');
+        $this->assertTrue(Config::has('xmlfile.istrue'));
+        $this->assertEquals(1, Config::get('xmlfile.istrue'));
+        Config::reset();
     }
+}

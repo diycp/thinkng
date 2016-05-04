@@ -8,25 +8,25 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-    namespace Think\Log\Driver;
+namespace Think\Log\Driver;
 
+/**
+ * 模拟测试输出
+ */
+class Test
+{
     /**
-     * 模拟测试输出
+     * 日志写入接口
+     *
+     * @access public
+     *
+     * @param array $log 日志信息
+     *
+     * @return bool
      */
-    class Test
+    public function save(array $log = [])
     {
-        /**
-         * 日志写入接口
-         *
-         * @access public
-         *
-         * @param array $log 日志信息
-         *
-         * @return bool
-         */
-        public function save(array $log = [])
-        {
-            return true;
-        }
-
+        return true;
     }
+
+}

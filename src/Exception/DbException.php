@@ -9,28 +9,26 @@
 // | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://zjzit.cn>
 // +----------------------------------------------------------------------
 
-    namespace Think\Exception;
+namespace Think\Exception;
 
-    use Think\Exception\Exception;
-
-    /**
-     * Database相关异常处理类
-     */
-    class DbException extends Exception
+/**
+ * Database相关异常处理类
+ */
+class DbException extends Exception
+{
+    public function __construct($message, Array $config, $sql, $code = 10500)
     {
-        public function __construct($message, Array $config, $sql, $code = 10500)
-        {
-            $this->message = $message;
-            $this->code = $code;
+        $this->message = $message;
+        $this->code = $code;
 
-            $this->setData('Database Status', [
-                'Error Code'    => $code,
-                'Error Message' => $message,
-                'Error SQL'     => $sql,
-            ]);
+        $this->setData('Database Status', [
+            'Error Code'    => $code,
+            'Error Message' => $message,
+            'Error SQL'     => $sql,
+        ]);
 
-            $this->setData('Database Config', $config);
-        }
-
-
+        $this->setData('Database Config', $config);
     }
+
+
+}

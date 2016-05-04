@@ -9,11 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-    namespace Think\Model;
+namespace Think\Model;
 
+class View extends Model
+{
     use \Traits\Model\ViewTrait;
-
-    class View extends Model
-    {
-        use \Traits\Model\ViewTrait;
-    }
+}
