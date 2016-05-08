@@ -11,8 +11,8 @@
 
 namespace Think\Cache\Driver;
 
-use Think\Cache;
-use Think\Exception;
+use Think\Cache\Cache;
+use Think\Exception\Exception;
 
 /**
  * Wincache缓存驱动

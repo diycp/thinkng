@@ -11,8 +11,8 @@
 
 namespace Think\Cache\Driver;
 
-use Think\Cache;
-use Think\Exception;
+use Think\Cache\Cache;
+use Think\Exception\Exception;
 
 /**
  * Sqlite缓存驱动

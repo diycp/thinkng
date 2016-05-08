@@ -11,7 +11,7 @@
 
 namespace Think\Cache\Driver;
 
-use Think\Cache;
+use Think\Cache\Cache;
 
 /**
  * 文件类型缓存类
