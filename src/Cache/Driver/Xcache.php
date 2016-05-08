@@ -11,8 +11,8 @@
 
 namespace Think\Cache\Driver;
 
-use Think\Cache;
-use Think\Exception;
+use Think\Cache\Cache;
+use Think\Exception\Exception;
 
 /**
  * Xcache缓存驱动
@@ -33,6 +33,7 @@ class Xcache
      *
      * @param array $options 缓存参数
      *
+     * @throws Exception
      * @access public
      */
     public function __construct($options = [])

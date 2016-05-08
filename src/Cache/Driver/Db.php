@@ -11,7 +11,7 @@
 
 namespace Think\Cache\Driver;
 
-use Think\Cache;
+use Think\Cache\Cache;
 
 /**
  * 数据库方式缓存驱动
